@@ -1,0 +1,545 @@
+fileFormatVersion: 2
+guid: 92e7f882fb6858a45a629334d5a46566
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7752435736697720285
+    second: Walking_Devilman_2_0
+  - first:
+      213: -4106852959143563684
+    second: Walking_Devilman_2_1
+  - first:
+      213: -1537546350178165008
+    second: Walking_Devilman_2_2
+  - first:
+      213: 6764039703799448468
+    second: Walking_Devilman_2_3
+  - first:
+      213: 673867780357010787
+    second: Walking_Devilman_2_4
+  - first:
+      213: 5232037199218172602
+    second: Walking_Devilman_2_5
+  - first:
+      213: -8153589147416877550
+    second: Walking_Devilman_2_6
+  - first:
+      213: -6174167166445654443
+    second: Walking_Devilman_2_7
+  - first:
+      213: -7491545044026790615
+    second: Walking_Devilman_2_8
+  - first:
+      213: 384501589512022261
+    second: Walking_Devilman_2_9
+  - first:
+      213: 492757371806177713
+    second: Walking_Devilman_2_10
+  - first:
+      213: 115450219612580218
+    second: Walking_Devilman_2_11
+  - first:
+      213: -367555270873026981
+    second: Walking_Devilman_2_12
+  - first:
+      213: 7851981041939324608
+    second: Walking_Devilman_2_13
+  - first:
+      213: 1366540042030952445
+    second: Walking_Devilman_2_14
+  - first:
+      213: -2755678806638925185
+    second: Walking_Devilman_2_15
+  - first:
+      213: 4519946718059437481
+    second: Walking_Devilman_2_17
+  - first:
+      213: 2447128715477630902
+    second: Walking_Devilman_2_19
+  - first:
+      213: -1559140879873120767
+    second: Walking_Devilman_2_20
+  - first:
+      213: -5985613848942400764
+    second: Walking_Devilman_2_21
+  - first:
+      213: 8008728097606389253
+    second: Walking_Devilman_2_22
+  - first:
+      213: -8226850923708959906
+    second: Walking_Devilman_2_23
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Walking_Devilman_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36765aaf54877d74aa6d9b172dfe4b36
+      internalID: 7752435736697720285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_2
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 128
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 066ff3949f0b6c44382eff67fa81a67f
+      internalID: -1537546350178165008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 127
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a4e244aed718645a7afa00399cb90b
+      internalID: 6764039703799448468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_5
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 128
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46000b7474d18284cbbd5dd7434950b8
+      internalID: 5232037199218172602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_7
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 128
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cbf7c1382eee5e46972c444a25b4f27
+      internalID: -6174167166445654443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_8
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 128
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a52a9bae8dcc44483870f147ca48dd
+      internalID: -7491545044026790615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_10
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 128
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb32d5bd07660594a9121a132639c46e
+      internalID: 492757371806177713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_11
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 128
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf7bdce75c9345d48a74519a7a329775
+      internalID: 115450219612580218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9359da844d973794e88016b749346258
+      internalID: -367555270873026981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_14
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 64
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274243e12e33a364e9bf6b91859a06f5
+      internalID: 1366540042030952445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_15
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 64
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d8804761c730c4badcbf351b19acc4
+      internalID: -2755678806638925185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_17
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 64
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2882602cd84d7194fa5a229473e57e5e
+      internalID: 4519946718059437481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_19
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 64
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b7783cdbecc0c4385fb858d0141532
+      internalID: 2447128715477630902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_20
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 64
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4490fced8e40cf341b2eba24ee449c36
+      internalID: -1559140879873120767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_22
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 64
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b88af575b8a5f849abcd28df1d4a2ba
+      internalID: 8008728097606389253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_23
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 64
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9c1137f17b99f4ca5ed33adda2221a
+      internalID: -8226850923708959906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040a9c0975ba15c4c902994333341d1d
+      internalID: -4106852959143563684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_Devilman_2_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df73cd75fd3ac694585178b916dbeb06
+      internalID: 673867780357010787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8e8afe91878dafd4e8a13c05d9f7b704
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
