@@ -84,7 +84,7 @@ public class PlayerController_2 : MonoBehaviour
             rb.gravityScale += Time.deltaTime * glidey;
 
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 10f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.8f);
 
         if (hit.collider != null)
             Debug.DrawRay(hit.point, hit.normal * 2, Color.green);
@@ -128,7 +128,7 @@ public class PlayerController_2 : MonoBehaviour
         // HORIZONTAL MOVEMENT
 
         // ANIMATOR "RUNNING" PARAMETER--------------------
-        horizontalMove = Input.GetAxisRaw("Horizontal") * step;
+        horizontalMove = Input.GetAxisRaw("Horizontal") * rb.velocity.magnitude;
 
         anim.SetFloat("Running", Mathf.Abs(horizontalMove));
 
@@ -141,6 +141,12 @@ public class PlayerController_2 : MonoBehaviour
 
             sprite.transform.localScale = new Vector3(1, 1, 1);
 
+            if(Input.GetButtonDown("Roll") && horizontalMove > 5f)
+            {
+                anim.SetTrigger("trigRolling");
+                Rolling();
+            }
+
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
@@ -149,6 +155,11 @@ public class PlayerController_2 : MonoBehaviour
 
             sprite.transform.localScale = new Vector3(-1, 1, 1);
 
+            if (Input.GetButtonDown("Roll") && horizontalMove < -5f)
+            {
+                anim.SetTrigger("trigRolling");
+                Rolling();
+            }
         }
 
 
@@ -158,12 +169,17 @@ public class PlayerController_2 : MonoBehaviour
 
             momMulti = 1f;
 
+            if (Input.GetButtonDown("Roll") && horizontalMove == 0)
+            {
+                anim.SetTrigger("trigRolling");
+                Rolling();
+            }
         }
         else
         {
             rb.AddForce(dir * step + spriteDir * step * momMulti);
 
-           if (rb.velocity.magnitude > 20f)
+           if (rb.velocity.magnitude > 10f)
                 momMulti = Mathf.Clamp(momMulti + (rb.velocity.magnitude * 2f) * Time.deltaTime * 0.05f, -4f, 4f);
 
 
@@ -175,6 +191,7 @@ public class PlayerController_2 : MonoBehaviour
         {
             rb.AddForce(transform.up * jumpForce);
             jumpTimer = 1.3f;
+
             //ANIMATOR "ISJUMPING PARAMETER------------
             anim.SetBool("isJumping", true);
         }
@@ -187,12 +204,39 @@ public class PlayerController_2 : MonoBehaviour
             glidey = 0;
 
         }
+
         else
         {
-            glidey = 1.8f;
-        }
-        
+            glidey = 1f;
+            anim.SetBool("isJumping", false);
 
+        }
+
+        //GLIDE
+
+
+        if (Input.GetButtonDown("Glide") && !grounded)
+        {
+            rb.AddForce(transform.up * jumpForce);
+            jumpTimer = 1.3f;
+
+            anim.SetBool("isGliding", true);
+        }
+
+        if (Input.GetButton("Glide"))
+        {
+            jumpTimer -= Time.deltaTime;
+            rb.AddForce(transform.up * (jumpForce / 150) * jumpTimer);
+
+            glidey = 0;
+
+        }
+
+        else
+        {
+            glidey = 1f;
+            anim.SetBool("isGliding", false);
+        }
 
         if (Input.GetAxisRaw("Vertical") < 0)
         {
@@ -203,6 +247,16 @@ public class PlayerController_2 : MonoBehaviour
         }
 
 
+    }
+
+    //METHOD FOR "ISROLLING" PARAMETER
+    private void Rolling()
+    {
+        if (anim.GetBool("isRolling") == false)
+            anim.SetBool("isRolling", true);
+
+        else if (anim.GetBool("isRolling") == true)
+            anim.SetBool("isRolling", false);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -257,7 +311,7 @@ public class PlayerController_2 : MonoBehaviour
         
         if (collision.gameObject.CompareTag("ground"))
         {
-
+            anim.SetBool("isGrounded", true);
             //rb.mass = 0.5f;
             rb.gravityScale = 1.7f;
             OnLandEvent.Invoke();
@@ -287,7 +341,6 @@ public class PlayerController_2 : MonoBehaviour
     {
         anim.SetBool("isJumping", false);
         anim.SetBool("isGliding", false);
-        
 
     }
 

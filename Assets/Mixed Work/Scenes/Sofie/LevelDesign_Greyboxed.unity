@@ -580,12 +580,12 @@ PrefabInstance:
     - target: {fileID: 3044196505572992489, guid: 6336953bf9b19d34cae9cc6a93aadc79,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.12155
+      value: -14.3
       objectReference: {fileID: 0}
     - target: {fileID: 3044196505572992489, guid: 6336953bf9b19d34cae9cc6a93aadc79,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.4160347
+      value: -4.59
       objectReference: {fileID: 0}
     - target: {fileID: 3044196505572992489, guid: 6336953bf9b19d34cae9cc6a93aadc79,
         type: 3}
@@ -631,6 +631,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044196505572992489, guid: 6336953bf9b19d34cae9cc6a93aadc79,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.26744
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044196505572992489, guid: 6336953bf9b19d34cae9cc6a93aadc79,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.26744
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044196505572992489, guid: 6336953bf9b19d34cae9cc6a93aadc79,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.26744
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044196505572992490, guid: 6336953bf9b19d34cae9cc6a93aadc79,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 112766543
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044196505572992490, guid: 6336953bf9b19d34cae9cc6a93aadc79,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6336953bf9b19d34cae9cc6a93aadc79, type: 3}
@@ -1347,6 +1372,7 @@ GameObject:
   - component: {fileID: 629587811}
   - component: {fileID: 629587813}
   - component: {fileID: 629587812}
+  - component: {fileID: 629587814}
   m_Layer: 0
   m_Name: GreyBoxer_9
   m_TagString: Untagged
@@ -1691,6 +1717,34 @@ SpriteShapeRenderer:
   m_LocalAABB:
     m_Center: {x: -0.48424983, y: -2.281488, z: 0}
     m_Extent: {x: 1.5788977, y: 2.281488, z: 0}
+--- !u!68 &629587814
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629587810}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.67265224, y: -2.8074698}
+  - {x: 0.93474174, y: -3.690918}
+  - {x: 0.12779677, y: -4.4418745}
+  - {x: -0.8469598, y: -4.2769513}
+  - {x: -0.17176813, y: -2.9491487}
+  - {x: -0.65365773, y: -2.3846052}
+  - {x: -2.0008047, y: -1.9924809}
+  - {x: -2.0201602, y: -1.0782942}
+  - {x: -0.45183417, y: -2.0498283}
+  - {x: 0.62490964, y: -2.7857566}
+  - {x: 0.6495645, y: -2.7969706}
+  - {x: 0.67265224, y: -2.8074698}
 --- !u!1 &768272705
 GameObject:
   m_ObjectHideFlags: 0
