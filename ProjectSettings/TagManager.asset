@@ -54,8 +54,11 @@ TagManager:
   - name: Background_1
     uniqueID: 3943387995
     locked: 0
-  - name: Midground
+  - name: Midground_2
     uniqueID: 596053233
+    locked: 0
+  - name: Midground_1
+    uniqueID: 112766543
     locked: 0
   - name: Forground
     uniqueID: 3241728837
