@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public bool triggerGrounded;
     public bool balled;
     public bool gliding;
+    bool hasJumped;
     bool isHit;
 
     Vector2 direction;
@@ -172,10 +173,11 @@ public class PlayerController : MonoBehaviour
 
         // JUMP
 
-        if (Input.GetButtonDown("Jump") && triggerGrounded)
+        if (Input.GetButtonDown("Jump") && triggerGrounded && !hasJumped && !balled)
         {
-            rb.AddForce(-rb.velocity * 15f + Vector2.up * jumpForce);
+            rb.AddForce(-rb.velocity * 15f + Vector2.up * jumpForce * (0.3f + hNormal.y));
             jumpTimer = 2f;
+            hasJumped = true;
         }
 
         if (Input.GetButton("Jump") && !triggerGrounded || isHit)
@@ -209,6 +211,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+        hasJumped = false;
 
         if (collision.gameObject.CompareTag("fernRolled"))
         {
