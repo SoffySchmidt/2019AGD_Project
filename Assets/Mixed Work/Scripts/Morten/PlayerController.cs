@@ -15,17 +15,20 @@ public class PlayerController : MonoBehaviour
     Vector3 spriteDir;
     public Transform groundPoint;
     public GameObject sprite;
-    public bool grounded;
-    public bool triggerGrounded;
+
     public float jumpTimer;
     public float jumpForce;
+    public float glideDiv;
     public float takeoffForce;
     Vector3 targetDir;
     float turnSpeed;
     public float downForce;
     public float momMulti;
     float glidey;
+    public bool grounded;
+    public bool triggerGrounded;
     public bool balled;
+    public bool gliding;
     bool isHit;
 
     Vector2 direction;
@@ -175,16 +178,20 @@ public class PlayerController : MonoBehaviour
             jumpTimer = 2f;
         }
 
-        if (Input.GetButton("Jump") || isHit)
+        if (Input.GetButton("Jump") && !triggerGrounded || isHit)
         {
             jumpTimer -= Time.deltaTime;
-            rb.AddForce(transform.up * (jumpForce / 100) * jumpTimer);
+            rb.AddForce(transform.up * glideDiv * jumpTimer);
+
+            gliding = true;
 
             glidey = 0;
         }
         else
         {
             glidey = 1.8f;
+
+            gliding = false;
         }
 
 
