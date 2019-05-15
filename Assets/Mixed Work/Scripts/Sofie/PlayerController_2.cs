@@ -84,12 +84,12 @@ public class PlayerController_2 : MonoBehaviour
             rb.gravityScale += Time.deltaTime * glidey;
 
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.8f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.32f);
 
         if (hit.collider != null)
-            Debug.DrawRay(hit.point, hit.normal * 2, Color.green);
+        Debug.DrawRay(hit.point, hit.normal * -2f, Color.green);
 
-        Debug.DrawRay(transform.position, Vector2.down * 10f, Color.red);
+        Debug.DrawRay(transform.position, Vector2.down * 2f, Color.red);
 
         if (hit.collider != null)
         {
@@ -110,6 +110,8 @@ public class PlayerController_2 : MonoBehaviour
             }
             targetDir = direction;
             turnSpeed = 0.2f;
+
+            //Debug.Log("grounded");
         }
         else
         {
