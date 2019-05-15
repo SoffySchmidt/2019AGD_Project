@@ -20,6 +20,8 @@ public class CamSc : MonoBehaviour
 
     float impactTimer;
 
+    public float zoomVel;
+
 
     // Start is called before the first frame update
     void Start()
@@ -54,8 +56,21 @@ public class CamSc : MonoBehaviour
 
         if (Mathf.Abs(rb2d.velocity.x) > 1.5f && impactTimer < 0f)
         {
-            targetZ = Vector3.Slerp(transform.position, new Vector3(transform.position.x, transform.position.y, -80), speed * rb2d.velocity.magnitude * Time.deltaTime);
-            speed += 0.01f * Time.deltaTime;
+
+            if (rb2d.velocity.magnitude > 8f)
+            {
+                zoomVel = rb2d.velocity.magnitude;
+                speed += 0.003f * Time.deltaTime;
+            }
+            else
+            {
+                zoomVel = 0;
+                speed = 0f;
+            }
+
+
+            targetZ = Vector3.Slerp(transform.position, new Vector3(transform.position.x, transform.position.y, -70), speed * zoomVel * Time.deltaTime);
+
         }
         else
         {
@@ -69,7 +84,7 @@ public class CamSc : MonoBehaviour
         float distX = Vector2.Distance(new Vector2(transform.position.x, 0), new Vector2(camPoint.position.x, 0));
         float distY = Vector2.Distance(new Vector2(0, transform.position.y), new Vector2(0, camPoint.position.y));
 
-        targetPoint.position = Vector3.MoveTowards(targetPoint.position, camPoint.position, (distY * 15f + 20f) * Time.deltaTime);
+        targetPoint.position = Vector3.MoveTowards(targetPoint.position, camPoint.position, (distY * 15f + 17f) * Time.deltaTime);
 
 
 
