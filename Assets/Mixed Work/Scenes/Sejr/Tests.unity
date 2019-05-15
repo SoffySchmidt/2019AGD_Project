@@ -270,6 +270,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1539580156458400008, guid: 927256a585616314e98c7baab0f55b0a,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539580156458400008, guid: 927256a585616314e98c7baab0f55b0a,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539580156458400008, guid: 927256a585616314e98c7baab0f55b0a,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539580156458400008, guid: 927256a585616314e98c7baab0f55b0a,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 56861
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539580156458400008, guid: 927256a585616314e98c7baab0f55b0a,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime2
+      value: 65150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 927256a585616314e98c7baab0f55b0a, type: 3}
 --- !u!1001 &1606597210631874423
@@ -338,6 +363,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743916797215228310, guid: 6bc3c783422f96f4bb6dbd5d81a387d6,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743916797215228310, guid: 6bc3c783422f96f4bb6dbd5d81a387d6,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743916797215228310, guid: 6bc3c783422f96f4bb6dbd5d81a387d6,
+        type: 3}
+      propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743916797215228310, guid: 6bc3c783422f96f4bb6dbd5d81a387d6,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc3c783422f96f4bb6dbd5d81a387d6, type: 3}

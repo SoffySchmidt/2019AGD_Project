@@ -3505,15 +3505,15 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 39899
-        ctime2: 53777
+        ctime1: 61487
+        ctime2: 65535
         ctime3: 0
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 22552
-        atime1: 35659
+        atime0: 30262
+        atime1: 43947
         atime2: 65535
         atime3: 0
         atime4: 0
