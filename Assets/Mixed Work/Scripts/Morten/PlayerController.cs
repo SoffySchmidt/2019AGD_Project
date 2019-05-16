@@ -261,7 +261,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-            if (hNormal.y < 0.8f)
+            if (hNormal.y < 0.8f || balled)
             {
                 GetComponent<Collider2D>().sharedMaterial = matSlip;
             }
