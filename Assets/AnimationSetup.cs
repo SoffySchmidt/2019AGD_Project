@@ -11,6 +11,9 @@ public class AnimationSetup : MonoBehaviour
     public bool isGliding;
     public bool isBalled;
     public float Running;
+    public int indexOfRoll;
+
+
 
     [Header("Events")]
     [Space]
@@ -27,25 +30,25 @@ public class AnimationSetup : MonoBehaviour
 
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+         indexOfRoll = anim.GetLayerIndex("Base Layer");
+
+        //Debug.Log("Base: " + anim.GetLayerIndex("Arma_Roll"));
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         isGrounded = controllerScript.triggerGrounded;
         isGliding = controllerScript.gliding;
         isBalled = controllerScript.balled;
 
-        Running = controllerScript.velocityRead;
+        Running = controllerScript.rb.velocity.x;
 
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButton("Jump"))
         {
             anim.SetBool("isJumping", true);
             anim.SetBool("isGrounded", false);
@@ -57,10 +60,11 @@ public class AnimationSetup : MonoBehaviour
             anim.SetBool("isGrounded", false);
         }
 
-        if (isBalled && isGrounded)
+        if (isBalled && isGrounded && Input.GetButtonDown("Roll"))
         {
-            anim.SetBool("isRolling", true);
+     
             anim.SetBool("isGrounded", true);
+            anim.SetBool("isRolling", true);
         }
 
         if(isGrounded)
@@ -69,11 +73,23 @@ public class AnimationSetup : MonoBehaviour
             OnLandEvent.Invoke();
         }
 
-        if(Running > 0f)
+        if(isGrounded && Running > 0f || Running < 0f)
         {
             anim.SetFloat("Running", Mathf.Abs(Running));
         }
 
+    }
+
+    public void Rolling()
+    {
+        anim.Play("Rolling", indexOfRoll);
+
+
+           if (anim.GetBool("isRolling") == true && isGrounded && Input.GetButtonDown("Roll"))
+            {
+                anim.SetBool("isRolling", false);
+            }
+        
     }
 
     public void OnLanding()
