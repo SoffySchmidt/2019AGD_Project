@@ -18,6 +18,10 @@ public class AnimationSetup : MonoBehaviour
     [Header("Events")]
     [Space]
 
+    //Handling method OnLanding() for resetting bool values to false 
+    //Handling method Rolling() for activating Animation State for "Rolling", using an Animation Event 
+    //at the last key frame over the "RollUp" animation.
+
     public UnityEvent OnLandEvent;
 
     [System.Serializable]
@@ -28,6 +32,7 @@ public class AnimationSetup : MonoBehaviour
         controllerScript = FindObjectOfType<PlayerController>();
         anim = GetComponent<Animator>();
 
+        //Resetting the bool values for jumping and gliding to false (see in the bottom) after pressing the button
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
 
@@ -40,7 +45,7 @@ public class AnimationSetup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Accessing variables from PlayerController script 
         isGrounded = controllerScript.triggerGrounded;
         isGliding = controllerScript.gliding;
         isBalled = controllerScript.balled;
@@ -48,50 +53,55 @@ public class AnimationSetup : MonoBehaviour
         Running = controllerScript.rb.velocity.x;
 
 
+        //RUNNING
+        if (isGrounded && Running > 0f || Running < 0f)
+        {
+            anim.SetFloat("Running", Mathf.Abs(Running));
+        }
+
+        //JUMPING
         if (Input.GetButton("Jump"))
         {
             anim.SetBool("isJumping", true);
             anim.SetBool("isGrounded", false);
         }
 
-        if (isGliding && !isGrounded)
+        //GLIDING
+        if (Input.GetButtonDown("Jump") && isGliding && !isGrounded)
         {
             anim.SetBool("isGliding", true);
             anim.SetBool("isGrounded", false);
         }
 
-        if (isBalled && isGrounded && Input.GetButtonDown("Roll"))
+        //ROLLING
+        if (isGrounded && isBalled && Input.GetButtonDown("Roll"))
         {
-     
-            anim.SetBool("isGrounded", true);
             anim.SetBool("isRolling", true);
         }
 
-        if(isGrounded)
+        //UNROLLING
+        else if (Input.GetButtonDown("Roll") && anim.GetBool("isRolling") == true && isGrounded)
+        {
+            anim.SetBool("isRolling", false);
+        }
+
+        //GROUNDED
+        if (isGrounded)
         {
             anim.SetBool("isGrounded", true);
             OnLandEvent.Invoke();
         }
 
-        if(isGrounded && Running > 0f || Running < 0f)
-        {
-            anim.SetFloat("Running", Mathf.Abs(Running));
-        }
+
 
     }
-
+    //called by Animation Event in the "RollUp" animation
     public void Rolling()
     {
-        anim.Play("Rolling", indexOfRoll);
-
-
-           if (anim.GetBool("isRolling") == true && isGrounded && Input.GetButtonDown("Roll"))
-            {
-                anim.SetBool("isRolling", false);
-            }
-        
+        anim.Play("Rolling", indexOfRoll);  
     }
 
+    //reset bool values to false
     public void OnLanding()
     {
         anim.SetBool("isJumping", false);
