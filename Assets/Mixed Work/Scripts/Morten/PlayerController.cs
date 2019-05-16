@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float ballTest;
+
     public float velocityRead;
+    public float hnormalRead;
+    public float impactRead;
     public PhysicsMaterial2D matSlip;
     public PhysicsMaterial2D matNonSlip;
     public Rigidbody2D rb;
@@ -13,10 +17,12 @@ public class PlayerController : MonoBehaviour
     float step;
     Vector3 dir;
     Vector3 spriteDir;
+    float spriteDirMul;
     public Transform groundPoint;
     public GameObject sprite;
 
-    public float jumpTimer;
+    public float glideTimer;
+    float jumpTimer;
     public float jumpForce;
     public float glideDiv;
     public float takeoffForce;
@@ -31,6 +37,12 @@ public class PlayerController : MonoBehaviour
     public bool gliding;
     bool hasJumped;
     bool isHit;
+    public float intoBallTimer;
+    public float outofBallTimer;
+    public float ballTimer;
+    bool unfold;
+
+    Vector2 prevVelocity, deltaVelocity;
 
     Vector2 direction;
 
@@ -46,26 +58,36 @@ public class PlayerController : MonoBehaviour
         sr = GetComponentInChildren<SpriteRenderer>();
         GetComponent<Collider2D>().sharedMaterial = matNonSlip;
         oriSpeed = speedMul;
+        ballTimer = intoBallTimer;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // READS ONLY
+
         velocityRead = rb.velocity.magnitude;
+        hnormalRead = hNormal.y;
+        impactRead = deltaVelocity.magnitude;
+
+        ballTest = Mathf.Clamp(Mathf.Clamp(1 - rb.velocity.magnitude, 0.4f, 0.5f) * (10.2f - Mathf.Abs(Input.GetAxisRaw("Horizontal")) * 10f) * (hNormal.y * 5 - 4f), 0.5f, 100f);
 
         // CONSTANTS
-        if (grounded)
+
+        if (jumpTimer > 0f && triggerGrounded)
+        {
+            speedMul = oriSpeed / 3f;
+        }
+        else if (grounded)
         {
             speedMul = oriSpeed;
-            step = speedMul * (-Mathf.Abs(rb.velocity.x * .15f) + 2f) * Time.deltaTime;
         }
         else
         {
-            speedMul = Mathf.Clamp(rb.velocity.magnitude * 40f, 0, oriSpeed); 
-                
-
-            step = speedMul * (-Mathf.Abs(rb.velocity.x * .15f) + 2f) * Time.deltaTime;
+            speedMul = Mathf.Clamp(rb.velocity.magnitude * 40f, 0, oriSpeed);             
         }
+
+        step = speedMul * (-Mathf.Abs(rb.velocity.x * .15f) + 2f) * Time.deltaTime;
 
         if (!grounded && rb.gravityScale < 3.7f)
             rb.gravityScale += Time.deltaTime * glidey;
@@ -84,6 +106,9 @@ public class PlayerController : MonoBehaviour
         }
 
         direction = Vector2.up;
+
+        deltaVelocity = rb.velocity - prevVelocity;
+        prevVelocity = rb.velocity;
 
         // SPRITES
 
@@ -116,16 +141,43 @@ public class PlayerController : MonoBehaviour
 
         if (rb.velocity.magnitude > 8f && !balled)
         {
-            
-            balled = true;
+
+            if (ballTimer < 0f && triggerGrounded)
+            {
+                balled = true;
+                unfold = false;
+                ballTimer = outofBallTimer;
+            }
+            else
+            {
+                ballTimer -= Time.deltaTime;
+            }
 
             //if(grounded)
                 //rb.AddForce(sprite.transform.up * 200f);
 
-
-        } else if (rb.velocity.magnitude < 5f)
+        } else if (rb.velocity.magnitude < 4f)
         {
-            balled = false;
+
+            if (ballTimer < 0f)
+            {
+                balled = false;
+                ballTimer = intoBallTimer;
+            }
+            else
+            {
+                ballTimer -= Time.deltaTime * Mathf.Clamp(Mathf.Clamp(1 - rb.velocity.magnitude, 0.4f, 0.5f) * (10.2f - Mathf.Abs(Input.GetAxisRaw("Horizontal")) * 10f) * (hNormal.y * 5 - 4f), 0.5f, 100f);
+            }
+
+            if (deltaVelocity.magnitude > 7f)
+                balled = false;
+        }
+
+        if (!balled && !unfold)
+        {
+            rb.AddForce(-rb.velocity * 10f);
+            rb.AddForce(sprite.transform.up * 150f + Vector3.up * 450f);
+            unfold = true;
         }
 
 
@@ -149,12 +201,21 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") > 0 && rb.velocity.y > 0.5f)
         {
-            if (rb.velocity.magnitude > 10f)
+            if (!balled)
+            {
+                spriteDirMul = (1 - hNormal.y) * 6.5f;
+            }
+            else
+            {
+                spriteDirMul = 1f;
+            }
+
+            if (balled)
                 momMulti = Mathf.Clamp(momMulti + (rb.velocity.magnitude * 2f) * Time.deltaTime * 0.05f, -7f, 7f);
 
             if (rb.velocity.y > 0)
             {
-                rb.AddForce(dir * step + spriteDir * step * momMulti * Mathf.Clamp(hNormal.y * 1.5f, 0f, 1f));
+                rb.AddForce(dir * step + (spriteDir * spriteDirMul) * step * momMulti * Mathf.Clamp(hNormal.y * 1.5f, 0f, 1f));
             }
             else
             {
@@ -173,17 +234,24 @@ public class PlayerController : MonoBehaviour
 
         // JUMP
 
-        if (Input.GetButtonDown("Jump") && triggerGrounded && !hasJumped && !balled)
+
+
+        if (Input.GetButtonDown("Jump") && triggerGrounded && !hasJumped && !balled && jumpTimer < 0f)
         {
             rb.AddForce(-rb.velocity * 15f + Vector2.up * jumpForce * (0.3f + hNormal.y));
-            jumpTimer = 2f;
+            glideTimer = 2f;
             hasJumped = true;
+            jumpTimer = 1f;
+        }
+        else
+        {
+            jumpTimer -= Time.deltaTime;
         }
 
         if (Input.GetButton("Jump") && !triggerGrounded || isHit)
         {
-            jumpTimer -= Time.deltaTime;
-            rb.AddForce(transform.up * glideDiv * jumpTimer);
+            glideTimer -= Time.deltaTime;
+            rb.AddForce(transform.up * glideDiv * glideTimer);
 
             gliding = true;
 
@@ -197,6 +265,8 @@ public class PlayerController : MonoBehaviour
         }
 
 
+
+        // DOWNWARD FORCE
 
         if (Input.GetAxisRaw("Vertical") < 0)
         {
@@ -261,7 +331,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-            if (hNormal.y < 0.8f || balled)
+            if (!grounded || balled)
             {
                 GetComponent<Collider2D>().sharedMaterial = matSlip;
             }
@@ -333,6 +403,7 @@ public class PlayerController : MonoBehaviour
             takeoffForce = Mathf.Abs(rb.velocity.x);
 
             groundPoint.position = transform.position;
+
         }
     }
 

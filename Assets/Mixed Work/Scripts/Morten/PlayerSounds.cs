@@ -35,7 +35,7 @@ public class PlayerSounds : MonoBehaviour
         if (pc.balled && pc.triggerGrounded)
         {
             aus.volume = (0.3f + rb.velocity.magnitude / 7f) * Mathf.Clamp(Time.deltaTime * 10f, 0f, 1f);
-            aus.pitch = 0.7f + rb.velocity.magnitude / 18f + Random.Range(0f, 0.1f);
+            aus.pitch = 0.1f + rb.velocity.magnitude / 12f + Random.Range(0f, 0.03f);
         }
         else
         {
