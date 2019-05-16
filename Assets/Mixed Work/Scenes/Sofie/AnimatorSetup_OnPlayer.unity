@@ -190,6 +190,7 @@ MonoBehaviour:
   isGliding: 0
   isBalled: 0
   Running: 0
+  indexOfRoll: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -404,12 +405,12 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 8613836843559937111}
+      objectReference: {fileID: 6166385811128744876}
     - target: {fileID: 9190890774046780456, guid: c98352ec28af53642ac0d120be3a13bc,
         type: 3}
       propertyPath: camPoint
       value: 
-      objectReference: {fileID: 8613836843559937131}
+      objectReference: {fileID: 6166385811128744848}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c98352ec28af53642ac0d120be3a13bc, type: 3}
 --- !u!1001 &3540414153160492186
@@ -721,6 +722,7 @@ MonoBehaviour:
   velocityRead: 0
   matSlip: {fileID: 0}
   matNonSlip: {fileID: 0}
+  rb: {fileID: 0}
   oriSpeed: 0
   speedMul: 450
   groundPoint: {fileID: 6166385809701400756}
@@ -840,18 +842,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!1 &8613836843559937111 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3044196505572992469, guid: 6336953bf9b19d34cae9cc6a93aadc79,
-    type: 3}
-  m_PrefabInstance: {fileID: 9039245451061639757}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &8613836843559937131 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3044196505572992489, guid: 6336953bf9b19d34cae9cc6a93aadc79,
-    type: 3}
-  m_PrefabInstance: {fileID: 9039245451061639757}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8690535830928976736
 PrefabInstance:
   m_ObjectHideFlags: 0

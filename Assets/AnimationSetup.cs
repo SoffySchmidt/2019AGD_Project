@@ -57,20 +57,30 @@ public class AnimationSetup : MonoBehaviour
         if (isGrounded && Running > 0f || Running < 0f)
         {
             anim.SetFloat("Running", Mathf.Abs(Running));
+            anim.SetBool("isGrounded", true);
         }
 
         //JUMPING
-        if (Input.GetButton("Jump"))
+        if (Input.GetButton("Jump") && !isGliding)
         {
             anim.SetBool("isJumping", true);
-            anim.SetBool("isGrounded", false);
+            anim.SetBool("isGliding", false);
         }
 
         //GLIDING
-        if (Input.GetButtonDown("Jump") && isGliding && !isGrounded)
+        if (isGliding && !isGrounded)
         {
-            anim.SetBool("isGliding", true);
-            anim.SetBool("isGrounded", false);
+            if (Input.GetButton("Jump"))
+            {
+                anim.SetBool("isGliding", true);
+                anim.SetBool("isGrounded", false);
+            }
+        }
+
+        else if(Input.GetButton("Jump") && isGliding & isGrounded)
+        {
+            anim.SetBool("isGliding", false);
+            anim.SetBool("isGrounded", true);
         }
 
         //ROLLING
