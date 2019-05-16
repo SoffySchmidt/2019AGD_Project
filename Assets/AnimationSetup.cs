@@ -1,50 +1,72 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AnimationSetup : MonoBehaviour
 {
-    Animator anim;
+    public Animator anim;
+    public PlayerController controllerScript;
     public bool isGrounded;
     public bool isGliding;
     public bool isBalled;
     public float Running;
 
+    [Header("Events")]
+    [Space]
+
+    public UnityEvent OnLandEvent;
+
+    [System.Serializable]
+    public class BoolEvent : UnityEvent<bool> { }
+
+    private void Awake()
+    {
+        controllerScript = FindObjectOfType<PlayerController>();
+        anim = GetComponent<Animator>();
+
+        if (OnLandEvent == null)
+            OnLandEvent = new UnityEvent();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
-
+        
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        isGrounded = gameObject.GetComponent<PlayerController>().triggerGrounded;
-        isGliding = gameObject.GetComponent<PlayerController>().gliding;
-        isBalled = gameObject.GetComponent<PlayerController>().balled;
+        isGrounded = controllerScript.triggerGrounded;
+        isGliding = controllerScript.gliding;
+        isBalled = controllerScript.balled;
 
-        Running = gameObject.GetComponent<PlayerController>().velocityRead;
+        Running = controllerScript.velocityRead;
 
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             anim.SetBool("isJumping", true);
+            anim.SetBool("isGrounded", false);
         }
 
-        if (isGliding)
+        if (isGliding && !isGrounded)
         {
             anim.SetBool("isGliding", true);
+            anim.SetBool("isGrounded", false);
         }
 
-        if (isBalled)
+        if (isBalled && isGrounded)
         {
             anim.SetBool("isRolling", true);
+            anim.SetBool("isGrounded", true);
         }
 
         if(isGrounded)
         {
             anim.SetBool("isGrounded", true);
+            OnLandEvent.Invoke();
         }
 
         if(Running > 0f)
@@ -52,13 +74,9 @@ public class AnimationSetup : MonoBehaviour
             anim.SetFloat("Running", Mathf.Abs(Running));
         }
 
-        if(isBalled && Input.GetButton("Jump") && isGrounded)
-        {
-            anim.SetTrigger("trigRolling");
-        }
     }
 
-    void OnLanding()
+    public void OnLanding()
     {
         anim.SetBool("isJumping", false);
         anim.SetBool("isGliding", false);

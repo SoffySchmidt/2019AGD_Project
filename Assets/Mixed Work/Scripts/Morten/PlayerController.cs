@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float velocityRead;
     public PhysicsMaterial2D matSlip;
     public PhysicsMaterial2D matNonSlip;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     public float oriSpeed;
     public float speedMul;
     float step;
