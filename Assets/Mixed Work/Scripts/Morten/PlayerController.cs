@@ -162,6 +162,12 @@ public class PlayerController : MonoBehaviour
             if (ballTimer < 0f)
             {
                 balled = false;
+                if (!unfold)
+                {
+                    rb.AddForce(-rb.velocity * 5f);
+                    rb.AddForce(Vector2.up * 200f);
+                    unfold = true;
+                }
                 ballTimer = intoBallTimer;
             }
             else
@@ -171,13 +177,6 @@ public class PlayerController : MonoBehaviour
 
             if (deltaVelocity.magnitude > 7f)
                 balled = false;
-        }
-
-        if (!balled && !unfold)
-        {
-            rb.AddForce(-rb.velocity * 10f);
-            rb.AddForce(sprite.transform.up * 150f + Vector3.up * 450f);
-            unfold = true;
         }
 
 
