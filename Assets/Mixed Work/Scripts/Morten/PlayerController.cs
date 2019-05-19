@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public float ballTest;
 
+    public ParticleSystem ps;
+    public ParticleSystem ps2;
     public float velocityRead;
     public float hnormalRead;
     public float impactRead;
@@ -109,6 +111,24 @@ public class PlayerController : MonoBehaviour
 
         deltaVelocity = rb.velocity - prevVelocity;
         prevVelocity = rb.velocity;
+
+        if (grounded && rb.velocity.magnitude > 7f)
+        {
+            ps.emissionRate = 40 + rb.velocity.magnitude;
+            ps2.emissionRate = 23 + rb.velocity.magnitude / 2f;
+        }
+        else if (grounded)
+        {
+            ps.emissionRate = rb.velocity.magnitude / 2f;
+            ps2.emissionRate = 0;
+        }
+        else
+        {
+            ps.emissionRate = 0;
+            ps2.emissionRate = 0;
+        }
+
+
 
         // SPRITES
 
@@ -241,6 +261,7 @@ public class PlayerController : MonoBehaviour
             glideTimer = 2f;
             hasJumped = true;
             jumpTimer = 1f;
+
         }
         else
         {
@@ -281,6 +302,29 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
+
+        if (hasJumped)
+        {
+            var emitParams = new ParticleSystem.EmitParams();
+            emitParams.startColor = Color.black;
+            emitParams.startSize = 0.2f;
+            emitParams.velocity = new Vector3(Random.Range(-6, 2f), Random.Range(1, 2f), 0);
+            ps2.Emit(emitParams, 2);
+
+            var emitParams2 = new ParticleSystem.EmitParams();
+            emitParams2.startColor = Color.gray;
+            emitParams2.startSize = 0.2f;
+            emitParams2.velocity = new Vector3(Random.Range(-4, 4f), Random.Range(1, 2f), 0);
+            ps2.Emit(emitParams2, 2);
+
+            var emitParams3 = new ParticleSystem.EmitParams();
+            emitParams3.startColor = Color.black;
+            emitParams3.startSize = 0.2f;
+            emitParams3.velocity = new Vector3(Random.Range(-2, 5f), Random.Range(1, 2f), 0);
+            ps2.Emit(emitParams3, 3);
+        }
+
+
         hasJumped = false;
 
         if (collision.gameObject.CompareTag("fernRolled"))
@@ -298,6 +342,22 @@ public class PlayerController : MonoBehaviour
             collision.gameObject.GetComponentInParent<Fern>().rolled = true;
         }
 
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+
+        var emitParams = new ParticleSystem.EmitParams();
+        emitParams.startColor = Color.black;
+        emitParams.startSize = 0.2f;
+        emitParams.velocity = new Vector3(Random.Range(-2, 2f), Random.Range(2, 5f), 0);
+        ps2.Emit(emitParams, 1);
+
+        var emitParams2 = new ParticleSystem.EmitParams();
+        emitParams2.startColor = Color.black;
+        emitParams2.startSize = 0.2f;
+        emitParams2.velocity = new Vector3(Random.Range(-3, 3f), Random.Range(2, 5f), 0);
+        ps2.Emit(emitParams2, 2);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
