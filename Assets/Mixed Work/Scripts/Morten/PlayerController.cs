@@ -38,12 +38,13 @@ public class PlayerController : MonoBehaviour
     public bool triggerGrounded;
     public bool balled;
     public bool gliding;
-    bool hasJumped;
+    public bool hasJumped;
     bool isHit;
     public float intoBallTimer;
     public float outofBallTimer;
     public float ballTimer;
-    bool unfold;
+    public bool unfold;
+    public bool movingDown;
 
     Vector2 prevVelocity, deltaVelocity;
 
@@ -361,7 +362,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    public void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("ground"))
         {
@@ -373,7 +374,7 @@ public class PlayerController : MonoBehaviour
 
 
             bool tooSteep = hNormal.y < 0f;
-            bool movingDown = rb.velocity.y < 0f;
+            movingDown = rb.velocity.y < 0f;
             float slideTDown = 0.5f;
             float slideTUp = 0.3f;
 

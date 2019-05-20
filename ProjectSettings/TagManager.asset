@@ -8,6 +8,7 @@ TagManager:
   - fernRolled
   - fernOut
   - outsideBorder
+  - grass
   layers:
   - Default
   - TransparentFX
