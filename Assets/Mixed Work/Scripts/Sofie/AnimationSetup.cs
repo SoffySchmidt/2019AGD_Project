@@ -10,8 +10,16 @@ public class AnimationSetup : MonoBehaviour
     public bool isGrounded;
     public bool isGliding;
     public bool isBalled;
+    public bool isJumping;
+    public bool slidingDown;
+
+    public bool notBalled;
+    public float ballTimer;
+
+
     public float Running;
     public int indexOfRoll;
+
 
 
 
@@ -49,50 +57,48 @@ public class AnimationSetup : MonoBehaviour
         isGrounded = controllerScript.triggerGrounded;
         isGliding = controllerScript.gliding;
         isBalled = controllerScript.balled;
+        isJumping = controllerScript.hasJumped;
 
-        Running = controllerScript.rb.velocity.x;
+        notBalled = controllerScript.unfold;
+        ballTimer = controllerScript.ballTimer;
 
+        slidingDown = controllerScript.movingDown;
+
+
+        //Running = controllerScript.rb.velocity.x;
+        Running = controllerScript.velocityRead;
 
         //RUNNING
-        if (isGrounded && Running > 0f || Running < 0f)
+        if (isGrounded && Running > 0f )
         {
             anim.SetFloat("Running", Mathf.Abs(Running));
             anim.SetBool("isGrounded", true);
+            //anim.SetBool("isSliding", false);
         }
 
         //JUMPING
-        if (Input.GetButton("Jump") && !isGliding)
+        if (isJumping)
         {
             anim.SetBool("isJumping", true);
-            anim.SetBool("isGliding", false);
-        }
-
-        //GLIDING
-        if (isGliding && !isGrounded)
-        {
-            if (Input.GetButton("Jump"))
-            {
-                anim.SetBool("isGliding", true);
-                anim.SetBool("isGrounded", false);
-            }
-        }
-
-        else if(Input.GetButton("Jump") && isGliding & isGrounded)
-        {
-            anim.SetBool("isGliding", false);
-            anim.SetBool("isGrounded", true);
+            anim.SetBool("isGrounded", false);   
         }
 
         //ROLLING
-        if (isGrounded && isBalled && Input.GetButtonDown("Roll"))
+        if (Running > 8f && isBalled)
         {
-            anim.SetBool("isRolling", true);
+            if (ballTimer > 0f && isGrounded)
+            {
+                anim.SetBool("isRolling", true);
+            }
         }
 
-        //UNROLLING
-        else if (Input.GetButtonDown("Roll") && anim.GetBool("isRolling") == true && isGrounded)
+        if (Running < 4f && !isBalled)
         {
-            anim.SetBool("isRolling", false);
+
+            if (ballTimer < 0f && isGrounded)
+            {
+                anim.SetBool("isRolling", false);
+            }
         }
 
         //GROUNDED
@@ -105,16 +111,55 @@ public class AnimationSetup : MonoBehaviour
 
 
     }
-    //called by Animation Event in the "RollUp" animation
+    //ROLLING: called by Animation Event in the "RollUp" animation
     public void Rolling()
     {
-        anim.Play("Rolling", indexOfRoll);  
+        anim.Play("Rolling", indexOfRoll); 
+        
     }
+
+    //GLIDING called by Animation Event in the "Jump" animation
+    public void Gliding()
+    {
+        if(Input.GetButton("Jump") && !isGrounded)
+        anim.Play("Gliding", indexOfRoll);
+    }
+
+    public void Sliding()
+    {
+        //anim.SetBool("isGrounded", true);
+        //anim.SetBool("isSliding", true);
+
+        if (slidingDown && isGrounded)
+        {
+            //anim.SetFloat("Running", 0f);
+            anim.Play("Sliding", indexOfRoll);
+            //anim.SetBool("isSliding", true);
+        }
+
+
+        
+    }
+    /*
+    public void checkVelocity()
+    {
+        if(!slidingDown && isGrounded && anim.GetFloat("Running") < 0.01f)
+        {
+            anim.Play("Idle", indexOfRoll);
+        }
+        else if(isGrounded && anim.GetFloat("Running") > 0.1f)
+        {
+            anim.Play("Run", indexOfRoll);
+        }
+        
+    }
+    */
 
     //reset bool values to false
     public void OnLanding()
     {
         anim.SetBool("isJumping", false);
         anim.SetBool("isGliding", false);
+        anim.SetBool("isSliding", false);
     }
 }
