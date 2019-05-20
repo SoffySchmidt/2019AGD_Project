@@ -7,18 +7,24 @@ public class AnimationSetup : MonoBehaviour
 {
     public Animator anim;
     public PlayerController controllerScript;
+    Rigidbody2D rb;
     public bool isGrounded;
     public bool isGliding;
     public bool isBalled;
     public bool isJumping;
     public bool slidingDown;
+    public bool isLanding;
+    public bool isFalling;
+    bool isRunning;
 
     public bool notBalled;
     public float ballTimer;
 
 
-    public float Running;
+    public float movement;
     public int indexOfRoll;
+
+
 
 
 
@@ -38,6 +44,7 @@ public class AnimationSetup : MonoBehaviour
     private void Awake()
     {
         controllerScript = FindObjectOfType<PlayerController>();
+        rb = controllerScript.rb;
         anim = GetComponent<Animator>();
 
         //Resetting the bool values for jumping and gliding to false (see in the bottom) after pressing the button
@@ -66,25 +73,70 @@ public class AnimationSetup : MonoBehaviour
 
 
         //Running = controllerScript.rb.velocity.x;
-        Running = controllerScript.velocityRead;
+        movement = controllerScript.velocityRead;
 
-        //RUNNING
-        if (isGrounded && Running > 0f )
+
+
+        //MOVEMENT
+        if (isGrounded && movement > 0f && Input.GetAxisRaw("Horizontal") != 0f)
         {
-            anim.SetFloat("Running", Mathf.Abs(Running));
-            anim.SetBool("isGrounded", true);
-            //anim.SetBool("isSliding", false);
+            anim.SetBool("isRunning", true);
+            anim.SetBool("isIdle", false);
+            anim.SetBool("isJumping", false);
+            anim.SetBool("isGliding", false);
+            anim.SetBool("isSliding", false);
+            anim.SetBool("isRolling", false);
+            anim.SetBool("isLanding", false);
+
+            //
+        } else if (isGrounded && movement > 0f && Input.GetAxisRaw("Horizontal") == 0f)
+        {
+            anim.SetBool("isSliding", true);
+            anim.SetBool("isRunning", false);
+            anim.SetBool("isIdle", false);
+            anim.SetBool("isJumping", false);
+            anim.SetBool("isGliding", false);
+            anim.SetBool("isRolling", false);
+            anim.SetBool("isLanding", false);
+
+        }
+
+        else if (isGrounded && movement <= 0f && Input.GetAxisRaw("Horizontal") == 0f)
+        {
+            anim.SetBool("isIdle", true);
+            anim.SetBool("isSliding", false);
+            anim.SetBool("isRunning", false);
+            anim.SetBool("isJumping", false);
+            anim.SetBool("isGliding", false);
+            anim.SetBool("isRolling", false);
+            anim.SetBool("isLanding", false);
         }
 
         //JUMPING
         if (isJumping)
         {
             anim.SetBool("isJumping", true);
-            anim.SetBool("isGrounded", false);   
+            anim.SetBool("isIdle", false);
+            anim.SetBool("isSliding", false);
+            anim.SetBool("isRunning", false);
+            anim.SetBool("isGliding", false);
+            anim.SetBool("isRolling", false);
+            anim.SetBool("isLanding", false);
+
+            if(isGrounded)
+            {
+                anim.SetBool("isLanding", true);
+                anim.SetBool("isIdle", false);
+                anim.SetBool("isSliding", false);
+                anim.SetBool("isRunning", false);
+                anim.SetBool("isGliding", false);
+                anim.SetBool("isJumping", false);
+                anim.SetBool("isRolling", false);
+            }
         }
 
         //ROLLING
-        if (Running > 8f && isBalled)
+        if (movement > 8f && isBalled)
         {
             if (ballTimer > 0f && isGrounded)
             {
@@ -92,7 +144,7 @@ public class AnimationSetup : MonoBehaviour
             }
         }
 
-        if (Running < 4f && !isBalled)
+        if (movement < 4f && !isBalled)
         {
 
             if (ballTimer < 0f && isGrounded)
@@ -101,11 +153,20 @@ public class AnimationSetup : MonoBehaviour
             }
         }
 
+        //LANDING
+
+
         //GROUNDED
         if (isGrounded)
         {
-            anim.SetBool("isGrounded", true);
-            OnLandEvent.Invoke();
+            /*
+            anim.SetBool("isIdle", true);
+            anim.SetBool("isJumping", false);
+            anim.SetBool("isSliding", false);
+            anim.SetBool("isRunning", false);
+            anim.SetBool("isGliding", false);
+            anim.SetBool("isRolling", false);
+            */
         }
 
 
@@ -140,26 +201,5 @@ public class AnimationSetup : MonoBehaviour
 
         
     }
-    /*
-    public void checkVelocity()
-    {
-        if(!slidingDown && isGrounded && anim.GetFloat("Running") < 0.01f)
-        {
-            anim.Play("Idle", indexOfRoll);
-        }
-        else if(isGrounded && anim.GetFloat("Running") > 0.1f)
-        {
-            anim.Play("Run", indexOfRoll);
-        }
-        
-    }
-    */
 
-    //reset bool values to false
-    public void OnLanding()
-    {
-        anim.SetBool("isJumping", false);
-        anim.SetBool("isGliding", false);
-        anim.SetBool("isSliding", false);
-    }
 }

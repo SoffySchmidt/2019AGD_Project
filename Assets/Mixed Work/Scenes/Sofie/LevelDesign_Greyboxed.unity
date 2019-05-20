@@ -2370,6 +2370,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 254148855675732523, guid: c2afe475c76fa454b8396ae33d4de9a3,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 254148855675732523, guid: c2afe475c76fa454b8396ae33d4de9a3,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 254148855675732523, guid: c2afe475c76fa454b8396ae33d4de9a3,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 254148855675732521, guid: c2afe475c76fa454b8396ae33d4de9a3,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0049246154
+      objectReference: {fileID: 0}
+    - target: {fileID: 254148855675732521, guid: c2afe475c76fa454b8396ae33d4de9a3,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.09115871
+      objectReference: {fileID: 0}
     - target: {fileID: 254148856574759973, guid: c2afe475c76fa454b8396ae33d4de9a3,
         type: 3}
       propertyPath: m_SortingOrder
@@ -2379,6 +2404,16 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1919306608}
+    - target: {fileID: 7241071131740097890, guid: c2afe475c76fa454b8396ae33d4de9a3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7241071131740097890, guid: c2afe475c76fa454b8396ae33d4de9a3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.007
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2afe475c76fa454b8396ae33d4de9a3, type: 3}
 --- !u!1 &1179073883
