@@ -22,7 +22,7 @@ public class AnimationSetup : MonoBehaviour
 
 
     public float movement;
-    public int indexOfRoll;
+    public int indexOfAnim;
 
 
 
@@ -51,7 +51,7 @@ public class AnimationSetup : MonoBehaviour
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
 
-         indexOfRoll = anim.GetLayerIndex("Base Layer");
+         indexOfAnim = anim.GetLayerIndex("Base Layer");
 
         //Debug.Log("Base: " + anim.GetLayerIndex("Arma_Roll"));
 
@@ -87,9 +87,12 @@ public class AnimationSetup : MonoBehaviour
             anim.SetBool("isSliding", false);
             anim.SetBool("isRolling", false);
             anim.SetBool("isLanding", false);
+            anim.SetBool("isUnrolling", false);
 
             //
-        } else if (isGrounded && movement > 0f && Input.GetAxisRaw("Horizontal") == 0f)
+        }
+
+        if (isGrounded && movement > 0f && Input.GetAxisRaw("Horizontal") == 0f)
         {
             anim.SetBool("isSliding", true);
             anim.SetBool("isRunning", false);
@@ -98,21 +101,13 @@ public class AnimationSetup : MonoBehaviour
             anim.SetBool("isGliding", false);
             anim.SetBool("isRolling", false);
             anim.SetBool("isLanding", false);
+            anim.SetBool("isUnrolling", false);
 
         }
 
-        else if (isGrounded && movement <= 0f && Input.GetAxisRaw("Horizontal") == 0f)
-        {
-            anim.SetBool("isIdle", true);
-            anim.SetBool("isSliding", false);
-            anim.SetBool("isRunning", false);
-            anim.SetBool("isJumping", false);
-            anim.SetBool("isGliding", false);
-            anim.SetBool("isRolling", false);
-            anim.SetBool("isLanding", false);
-        }
 
-        //JUMPING
+
+        //JUMPING && GLIDING
         if (isJumping)
         {
             anim.SetBool("isJumping", true);
@@ -122,17 +117,9 @@ public class AnimationSetup : MonoBehaviour
             anim.SetBool("isGliding", false);
             anim.SetBool("isRolling", false);
             anim.SetBool("isLanding", false);
+            anim.SetBool("isUnrolling", false);
 
-            if(isGrounded)
-            {
-                anim.SetBool("isLanding", true);
-                anim.SetBool("isIdle", false);
-                anim.SetBool("isSliding", false);
-                anim.SetBool("isRunning", false);
-                anim.SetBool("isGliding", false);
-                anim.SetBool("isJumping", false);
-                anim.SetBool("isRolling", false);
-            }
+
         }
 
         //ROLLING
@@ -141,6 +128,13 @@ public class AnimationSetup : MonoBehaviour
             if (ballTimer > 0f && isGrounded)
             {
                 anim.SetBool("isRolling", true);
+                anim.SetBool("isSliding", false);
+                anim.SetBool("isRunning", false);
+                anim.SetBool("isIdle", false);
+                anim.SetBool("isJumping", false);
+                anim.SetBool("isGliding", false);
+                anim.SetBool("isLanding", false);
+                anim.SetBool("isUnrolling", false);
             }
         }
 
@@ -149,8 +143,17 @@ public class AnimationSetup : MonoBehaviour
 
             if (ballTimer < 0f && isGrounded)
             {
+                anim.SetBool("isUnrolling", true);
                 anim.SetBool("isRolling", false);
+                anim.SetBool("isSliding", false);
+                anim.SetBool("isRunning", false);
+                anim.SetBool("isIdle", false);
+                anim.SetBool("isJumping", false);
+                anim.SetBool("isGliding", false);
+                anim.SetBool("isLanding", false);
             }
+
+            anim.SetBool("isUnrolling", false);
         }
 
         //LANDING
@@ -175,31 +178,24 @@ public class AnimationSetup : MonoBehaviour
     //ROLLING: called by Animation Event in the "RollUp" animation
     public void Rolling()
     {
-        anim.Play("Rolling", indexOfRoll); 
+        anim.Play("Rolling", indexOfAnim); 
         
     }
 
     //GLIDING called by Animation Event in the "Jump" animation
     public void Gliding()
     {
-        if(Input.GetButton("Jump") && !isGrounded)
-        anim.Play("Gliding", indexOfRoll);
-    }
-
-    public void Sliding()
-    {
-        //anim.SetBool("isGrounded", true);
-        //anim.SetBool("isSliding", true);
-
-        if (slidingDown && isGrounded)
+        if (Input.GetButton("Jump") && !isGrounded)
         {
-            //anim.SetFloat("Running", 0f);
-            anim.Play("Sliding", indexOfRoll);
-            //anim.SetBool("isSliding", true);
+            anim.Play("Gliding", indexOfAnim);
+            anim.SetBool("isSliding", false);
+
+            if (isGrounded)
+            {
+                anim.SetBool("isSliding", false);
+                anim.SetBool("isLanding", true);
+            }
         }
-
-
-        
     }
 
 }
