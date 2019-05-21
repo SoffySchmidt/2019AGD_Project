@@ -17,6 +17,15 @@ public class AnimationSetup : MonoBehaviour
     public bool isFalling;
     bool isRunning;
 
+
+    public bool isIdle;
+    public bool isRolling;
+    public bool isSliding;
+    public bool isUnrolling;
+    public bool isRollingIn;
+
+    public int animState;
+
     public bool notBalled;
     public float ballTimer;
 
@@ -25,177 +34,244 @@ public class AnimationSetup : MonoBehaviour
     public int indexOfAnim;
 
 
-
-
-
-
-    [Header("Events")]
-    [Space]
-
     //Handling method OnLanding() for resetting bool values to false 
     //Handling method Rolling() for activating Animation State for "Rolling", using an Animation Event 
     //at the last key frame over the "RollUp" animation.
 
-    public UnityEvent OnLandEvent;
-
-    [System.Serializable]
-    public class BoolEvent : UnityEvent<bool> { }
-
     private void Awake()
     {
-        controllerScript = FindObjectOfType<PlayerController>();
-        rb = controllerScript.rb;
+        controllerScript = GetComponentInParent<PlayerController>();
+        rb = GetComponentInParent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
         //Resetting the bool values for jumping and gliding to false (see in the bottom) after pressing the button
-        if (OnLandEvent == null)
-            OnLandEvent = new UnityEvent();
 
          indexOfAnim = anim.GetLayerIndex("Base Layer");
 
         //Debug.Log("Base: " + anim.GetLayerIndex("Arma_Roll"));
+    }
+
+
+    void AnimSwitch(int state)
+    {
+
+        animState = state;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
         //Accessing variables from PlayerController script 
-        isGrounded = controllerScript.triggerGrounded;
-        isGliding = controllerScript.gliding;
-        isBalled = controllerScript.balled;
-        isJumping = controllerScript.hasJumped;
 
-        notBalled = controllerScript.unfold;
-        ballTimer = controllerScript.ballTimer;
+        //isGrounded = controllerScript.triggerGrounded;
+        //isGliding = controllerScript.gliding;
+        //isBalled = controllerScript.balled;
+        //isJumping = controllerScript.hasJumped;
 
-        slidingDown = controllerScript.movingDown;
+        //notBalled = controllerScript.unfold;
+        //ballTimer = controllerScript.ballTimer;
+
+        //slidingDown = controllerScript.movingDown;
 
 
         //Running = controllerScript.rb.velocity.x;
-        movement = controllerScript.velocityRead;
 
+        //movement = controllerScript.velocityRead;
 
-
-        //MOVEMENT
-        if (isGrounded && movement > 0f && Input.GetAxisRaw("Horizontal") != 0f)
+        if (controllerScript.balled)
         {
-            anim.SetBool("isRunning", true);
-            anim.SetBool("isIdle", false);
-            anim.SetBool("isJumping", false);
-            anim.SetBool("isGliding", false);
-            anim.SetBool("isSliding", false);
-            anim.SetBool("isRolling", false);
-            anim.SetBool("isLanding", false);
-            anim.SetBool("isUnrolling", false);
-
-            //
+            AnimSwitch(10);
         }
-
-        if (isGrounded && movement > 0f && Input.GetAxisRaw("Horizontal") == 0f)
+        else if (controllerScript.gliding)
         {
-            anim.SetBool("isSliding", true);
-            anim.SetBool("isRunning", false);
-            anim.SetBool("isIdle", false);
-            anim.SetBool("isJumping", false);
-            anim.SetBool("isGliding", false);
-            anim.SetBool("isRolling", false);
-            anim.SetBool("isLanding", false);
-            anim.SetBool("isUnrolling", false);
-
+            AnimSwitch(3);
         }
-
-
-
-        //JUMPING && GLIDING
-        if (isJumping)
+        else if (!controllerScript.grounded && rb.velocity.y <= 0f)
         {
-            anim.SetBool("isJumping", true);
-            anim.SetBool("isIdle", false);
-            anim.SetBool("isSliding", false);
-            anim.SetBool("isRunning", false);
-            anim.SetBool("isGliding", false);
-            anim.SetBool("isRolling", false);
-            anim.SetBool("isLanding", false);
-            anim.SetBool("isUnrolling", false);
-
-
+            AnimSwitch(9);
         }
-
-        //ROLLING
-        if (movement > 8f && isBalled)
+        else if (!controllerScript.grounded && rb.velocity.y > 0f)
         {
-            if (ballTimer > 0f && isGrounded)
-            {
-                anim.SetBool("isRolling", true);
-                anim.SetBool("isSliding", false);
-                anim.SetBool("isRunning", false);
-                anim.SetBool("isIdle", false);
-                anim.SetBool("isJumping", false);
-                anim.SetBool("isGliding", false);
-                anim.SetBool("isLanding", false);
-                anim.SetBool("isUnrolling", false);
-            }
+            AnimSwitch(1);
         }
-
-        if (movement < 4f && !isBalled)
+        else if (controllerScript.grounded && controllerScript.hasJumped)
         {
+            AnimSwitch(7);
+        }
+        else if (Input.GetAxisRaw("Horizontal") != 0f && controllerScript.triggerGrounded)
+        {
+            AnimSwitch(6);
+        }
+        else if (controllerScript.rb.velocity.magnitude > 1.2f && Input.GetAxisRaw("Horizontal") == 0f)
+        {
+            AnimSwitch(5);
+        }
+        else if (controllerScript.rb.velocity.magnitude <= 1.2f && Input.GetAxisRaw("Horizontal") == 0f)
+        {
+            AnimSwitch(2);
+        } 
 
-            if (ballTimer < 0f && isGrounded)
-            {
-                anim.SetBool("isUnrolling", true);
-                anim.SetBool("isRolling", false);
-                anim.SetBool("isSliding", false);
-                anim.SetBool("isRunning", false);
-                anim.SetBool("isIdle", false);
-                anim.SetBool("isJumping", false);
-                anim.SetBool("isGliding", false);
-                anim.SetBool("isLanding", false);
-            }
+        // ANIMATION CALLER
 
+        //isJumping
+        if (animState == 1)
+        {
+            anim.SetBool("isJumping",       true);
+            anim.SetBool("isIdle",      false);
+            anim.SetBool("isSliding",   false);
+            anim.SetBool("isRunning",   false);
+            anim.SetBool("isGliding",   false);
+            anim.SetBool("isRolling",   false);
+            anim.SetBool("isLanding",   false);
             anim.SetBool("isUnrolling", false);
+            anim.SetBool("isFalling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isRollingIn", false);
+        }
+        //isIdle
+        if (animState == 2)
+        {
+            anim.SetBool("isJumping",   false);
+            anim.SetBool("isIdle",          true);
+            anim.SetBool("isSliding",   false);
+            anim.SetBool("isRunning",   false);
+            anim.SetBool("isGliding",   false);
+            anim.SetBool("isRolling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isUnrolling", false);
+            anim.SetBool("isFalling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isRollingIn", false);
+        }
+        //isGliding
+        if (animState == 3)
+        {
+            anim.SetBool("isJumping",   false);
+            anim.SetBool("isIdle",      false);
+            anim.SetBool("isSliding",   false);
+            anim.SetBool("isRunning",   false);
+            anim.SetBool("isGliding",       true);
+            anim.SetBool("isRolling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isUnrolling", false);
+            anim.SetBool("isFalling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isRollingIn", false);
+        }
+        //isRolling
+        if (animState == 4)
+        {
+            anim.SetBool("isRolling",       true);
+            anim.SetBool("isSliding",   false);
+            anim.SetBool("isRunning",   false);
+            anim.SetBool("isIdle",      false);
+            anim.SetBool("isJumping",   false);
+            anim.SetBool("isGliding",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isUnrolling", false);
+            anim.SetBool("isFalling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isRollingIn", false);
+        }
+        //isSliding
+        if (animState == 5)
+        {
+            anim.SetBool("isRunning",   false);
+            anim.SetBool("isIdle",      false);
+            anim.SetBool("isJumping",   false);
+            anim.SetBool("isGliding",   false);
+            anim.SetBool("isSliding",       true);
+            anim.SetBool("isRolling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isUnrolling", false);
+            anim.SetBool("isFalling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isRollingIn", false);
+        }
+        //isRunning
+        if (animState == 6)
+        {
+            anim.SetBool("isSliding",   false);
+            anim.SetBool("isRunning",       true);
+            anim.SetBool("isIdle",      false);
+            anim.SetBool("isJumping",   false);
+            anim.SetBool("isGliding",   false);
+            anim.SetBool("isRolling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isUnrolling", false);
+            anim.SetBool("isFalling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isFalling",   false);
+            anim.SetBool("isRollingIn", false);
+        }
+        //isLanding
+        if (animState == 7)
+        {
+            anim.SetBool("isSliding",   false);
+            anim.SetBool("isRunning",   false);
+            anim.SetBool("isIdle",      false);
+            anim.SetBool("isJumping",   false);
+            anim.SetBool("isGliding",   false);
+            anim.SetBool("isRolling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isUnrolling", false);
+            anim.SetBool("isFalling",   false);
+            anim.SetBool("isLanding",       true);
+            anim.SetBool("isRollingIn", false);
+        }
+        //isUnrolling
+        if (animState == 8)
+        {
+            anim.SetBool("isSliding",   false);
+            anim.SetBool("isRunning",   false);
+            anim.SetBool("isIdle",      false);
+            anim.SetBool("isJumping",   false);
+            anim.SetBool("isGliding",   false);
+            anim.SetBool("isRolling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isUnrolling",     true);
+            anim.SetBool("isFalling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isRollingIn", false);
+        }
+        //isFalling
+        if (animState == 9)
+        {
+            anim.SetBool("isSliding",   false);
+            anim.SetBool("isRunning",   false);
+            anim.SetBool("isIdle",      false);
+            anim.SetBool("isJumping",   false);
+            anim.SetBool("isGliding",   false);
+            anim.SetBool("isRolling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isUnrolling", false);
+            anim.SetBool("isFalling",       true);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isRollingIn", false);
+        }
+        //isRollingIn
+        if (animState == 10)
+        {
+            anim.SetBool("isSliding",   false);
+            anim.SetBool("isRunning",   false);
+            anim.SetBool("isIdle",      false);
+            anim.SetBool("isJumping",   false);
+            anim.SetBool("isGliding",   false);
+            anim.SetBool("isRolling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isUnrolling", false);
+            anim.SetBool("isFalling",   false);
+            anim.SetBool("isLanding",   false);
+            anim.SetBool("isRollingIn",     true);
         }
 
         //LANDING
 
 
-        //GROUNDED
-        if (isGrounded)
-        {
-            /*
-            anim.SetBool("isIdle", true);
-            anim.SetBool("isJumping", false);
-            anim.SetBool("isSliding", false);
-            anim.SetBool("isRunning", false);
-            anim.SetBool("isGliding", false);
-            anim.SetBool("isRolling", false);
-            */
-        }
-
-
-
     }
     //ROLLING: called by Animation Event in the "RollUp" animation
-    public void Rolling()
-    {
-        anim.Play("Rolling", indexOfAnim); 
-        
-    }
 
-    //GLIDING called by Animation Event in the "Jump" animation
-    public void Gliding()
-    {
-        if (Input.GetButton("Jump") && !isGrounded)
-        {
-            anim.Play("Gliding", indexOfAnim);
-            anim.SetBool("isSliding", false);
-
-            if (isGrounded)
-            {
-                anim.SetBool("isSliding", false);
-                anim.SetBool("isLanding", true);
-            }
-        }
-    }
 
 }

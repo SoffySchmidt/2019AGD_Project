@@ -9,6 +9,7 @@ TagManager:
   - fernOut
   - outsideBorder
   - grass
+  - cannon
   layers:
   - Default
   - TransparentFX

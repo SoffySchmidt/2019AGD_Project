@@ -163,6 +163,8 @@ public class PlayerController : MonoBehaviour
 
 
         // BALL
+        if (!triggerGrounded)
+            ballTimer = intoBallTimer;
 
         if (rb.velocity.magnitude > 8f && !balled)
         {
@@ -173,7 +175,7 @@ public class PlayerController : MonoBehaviour
                 unfold = false;
                 ballTimer = outofBallTimer;
             }
-            else
+            else if (triggerGrounded)
             {
                 ballTimer -= Time.deltaTime;
             }
@@ -278,7 +280,14 @@ public class PlayerController : MonoBehaviour
             glideTimer -= Time.deltaTime;
             rb.AddForce(transform.up * glideDiv * glideTimer);
 
-            gliding = true;
+            if (glideTimer > 0.1f && transform.position.y + 2f > hit.point.y)
+            {
+                gliding = true;
+            }
+            else
+            {
+                gliding = false;
+            }
 
             glidey = 0;
         }
