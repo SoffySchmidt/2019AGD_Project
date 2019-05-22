@@ -1,0 +1,446 @@
+fileFormatVersion: 2
+guid: 3e95274745cbaee4a91190e9727e6bd5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1455565944719231391
+    second: fern_0
+  - first:
+      213: -8145626135638331712
+    second: fern_1
+  - first:
+      213: 3579866679846541535
+    second: fern_2
+  - first:
+      213: 4653711843639365037
+    second: fern_3
+  - first:
+      213: -5715844540673152425
+    second: fern_4
+  - first:
+      213: -2948704317494026316
+    second: fern_5
+  - first:
+      213: -3293530963456362710
+    second: fern_6
+  - first:
+      213: -301452751271835085
+    second: fern_7
+  - first:
+      213: -7115182778888379584
+    second: fern_8
+  - first:
+      213: 1436783567270597066
+    second: fern_9
+  - first:
+      213: -2227211148568255438
+    second: fern_10
+  - first:
+      213: -4331895293434997800
+    second: fern_11
+  - first:
+      213: 3222905353896496519
+    second: fern_12
+  - first:
+      213: 5785626536541127924
+    second: fern_13
+  - first:
+      213: 3161599700257864487
+    second: fern_14
+  - first:
+      213: -1198809044468139521
+    second: fern_15
+  - first:
+      213: 1777537489491989050
+    second: fern_16
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 72
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fern_0
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 2267
+        width: 417
+        height: 455
+      alignment: 9
+      pivot: {x: 0.3319148, y: 0.10128885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3343bbb4a5a9f74a9a73665534cf535
+      internalID: 1455565944719231391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fern_1
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 2261
+        width: 405
+        height: 447
+      alignment: 9
+      pivot: {x: 0.19459018, y: 0.11260017}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81c0d068c2b44342ad78c2106331199
+      internalID: -8145626135638331712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fern_2
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 2267
+        width: 471
+        height: 439
+      alignment: 9
+      pivot: {x: 0.1323408, y: 0.13371621}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3fde57e4bfa8434c8b40bfee1d5c9cb
+      internalID: 3579866679846541535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fern_3
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 2272
+        width: 467
+        height: 435
+      alignment: 9
+      pivot: {x: 0.111534104, y: 0.120869815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0508a0e35727e97449580758bfa54147
+      internalID: 4653711843639365037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fern_4
+      rect:
+        serializedVersion: 2
+        x: 2238
+        y: 2274
+        width: 481
+        height: 418
+      alignment: 9
+      pivot: {x: 0.1228408, y: 0.115314394}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c8657b0ff9568d449ca03ce6ef5cac2
+      internalID: -5715844540673152425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fern_5
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 1702
+        width: 537
+        height: 394
+      alignment: 9
+      pivot: {x: 0.12378248, y: 0.15466928}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e164e806339404ea46c815c9fc0e83
+      internalID: -2948704317494026316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fern_6
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1703
+        width: 622
+        height: 391
+      alignment: 9
+      pivot: {x: 0.10227942, y: 0.15201968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38453587f8488c64688779f1fc3ab094
+      internalID: -3293530963456362710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fern_7
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 1696
+        width: 673
+        height: 398
+      alignment: 9
+      pivot: {x: 0.08953413, y: 0.14778052}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55267fb7b6e8b524eb2a4b4c37f16e5f
+      internalID: -301452751271835085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fern_8
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1144
+        width: 746
+        height: 386
+      alignment: 9
+      pivot: {x: 0.07995898, y: 0.17955658}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5f2270a3b8c9cf448197d5c8a609bd9
+      internalID: -7115182778888379584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fern_9
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 1143
+        width: 831
+        height: 387
+      alignment: 9
+      pivot: {x: 0.073308, y: 0.18038459}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb218010db5229458dcc2ce3d9f633d
+      internalID: 1436783567270597066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fern_10
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 1143
+        width: 922
+        height: 428
+      alignment: 9
+      pivot: {x: 0.070703335, y: 0.21100196}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7043891b80ee2014da82f267b4533bee
+      internalID: -2227211148568255438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fern_13
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 599
+        width: 1067
+        height: 404
+      alignment: 9
+      pivot: {x: 0.071080685, y: 0.234656}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 850db9098cd663a4d9ce7354fadb98c4
+      internalID: 5785626536541127924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fern_14
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 599
+        width: 1235
+        height: 398
+      alignment: 9
+      pivot: {x: 0.052642055, y: 0.230656}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662e4b771108c0540a60d76ac512b099
+      internalID: 3161599700257864487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fern_16
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 148
+        width: 1286
+        height: 356
+      alignment: 9
+      pivot: {x: 0.05114688, y: 0.24418049}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f515cdab2a0364381fcd3a2aa177d9
+      internalID: 1777537489491989050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7407e0e3bbc88a148a15d0112d4c5a5f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
