@@ -34,6 +34,9 @@ public class CamSc : MonoBehaviour
 
     public float zoomVel;
 
+    public float zoomMax;
+    public float zoomMin;
+
 
     // Start is called before the first frame update
     void Start()
@@ -83,13 +86,13 @@ public class CamSc : MonoBehaviour
             }
 
 
-            targetZ = Vector3.Slerp(transform.position, new Vector3(transform.position.x, transform.position.y, -70), speed * zoomVel * Time.deltaTime);
+            targetZ = Vector3.Slerp(transform.position, new Vector3(transform.position.x, transform.position.y, zoomMax), speed * zoomVel * Time.deltaTime);
 
         }
         else
         {
             speed = 0.018f;
-            targetZ = Vector3.Slerp(transform.position, new Vector3(transform.position.x, transform.position.y, -40), speed * (10 + Mathf.Abs(targetZ.z * 1.5f)) * impact * Time.deltaTime);
+            targetZ = Vector3.Slerp(transform.position, new Vector3(transform.position.x, transform.position.y, zoomMin), speed * (10 + Mathf.Abs(targetZ.z * 1.5f)) * impact * Time.deltaTime);
         }
 
 
