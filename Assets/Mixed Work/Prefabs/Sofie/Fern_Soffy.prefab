@@ -130,6 +130,7 @@ Transform:
   m_Children:
   - {fileID: 3440366471579677682}
   - {fileID: 3331709103582133345}
+  - {fileID: 408650569578234491}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10.243}
@@ -147,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rolledIn: {fileID: 3331709103582133350}
   rolledOut: {fileID: 3440366471579677694}
+  pathBlocker: {fileID: 0}
   rolled: 1
   Fern: {fileID: 3440366469522579235}
 --- !u!95 &3440366469522579235
@@ -398,3 +400,52 @@ EdgeCollider2D:
   - {x: 7.726991, y: 0.2561829}
   - {x: 7.98511, y: 0.07803116}
   - {x: 8.44649, y: -0.31962436}
+--- !u!1 &8735316381933463719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 408650569578234491}
+  - component: {fileID: 7630402542019160033}
+  m_Layer: 0
+  m_Name: PathBlock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &408650569578234491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8735316381933463719}
+  m_LocalRotation: {x: -0, y: -0, z: 0.08926683, w: 0.9960078}
+  m_LocalPosition: {x: 0.69674647, y: 1.2498174, z: 0}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3331709104235682170}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &7630402542019160033
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8735316381933463719}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.5, y: 0}
+  - {x: 0.5, y: 0}
