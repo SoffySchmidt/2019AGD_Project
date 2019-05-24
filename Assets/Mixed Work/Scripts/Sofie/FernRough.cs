@@ -31,7 +31,6 @@ public class FernRough : MonoBehaviour
         {
             
             rolledIn.SetActive(false);
-            pathBlock.SetActive(true);
             Fern.SetBool("isOut", true);
         }
     }
