@@ -355,7 +355,8 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("fernRolled"))
         {
             Debug.Log("going out");
-            collision.gameObject.GetComponentInParent<Fern>().rolled = false;
+            //collision.gameObject.GetComponentInParent<Fern>().rolled = false;
+            collision.gameObject.GetComponentInParent<FernRough>().rolled = false;
             rb.AddForce(-rb.velocity);
             rb.AddForce(transform.up * 200f);
             isHit = true;
@@ -364,7 +365,8 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("fernOut"))
         {
             Debug.Log("going in");
-            collision.gameObject.GetComponentInParent<Fern>().rolled = true;
+            //collision.gameObject.GetComponentInParent<Fern>().rolled = true;
+            collision.gameObject.GetComponentInParent<FernRough>().rolled = true;
         }
 
     }
