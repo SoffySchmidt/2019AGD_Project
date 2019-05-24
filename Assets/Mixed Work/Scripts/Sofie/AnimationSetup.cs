@@ -96,15 +96,15 @@ public class AnimationSetup : MonoBehaviour
         {
             AnimSwitch(5);
         }
-        else if (!controllerScript.grounded && !controllerScript.triggerGrounded && rb.velocity.y <= 0f)
+        else if (!controllerScript.triggerGrounded && rb.velocity.y <= 0f)
         {
             AnimSwitch(9);
         }
-        else if (!controllerScript.grounded && !controllerScript.triggerGrounded && rb.velocity.y > 0f)
+        else if (!controllerScript.triggerGrounded && rb.velocity.y > 0f)
         {
             AnimSwitch(1);
         }
-        else if (controllerScript.grounded && controllerScript.hasJumped)
+        else if (controllerScript.triggerGrounded && controllerScript.hasJumped)
         {
             AnimSwitch(7);
         }
