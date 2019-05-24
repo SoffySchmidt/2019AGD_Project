@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     public float ballTest;
 
+    public GameObject airCol;
+    public GameObject groundCol;
+
     public ParticleSystem ps;
     public ParticleSystem ps2;
     public ParticleSystem ps3;
@@ -133,6 +136,14 @@ public class PlayerController : MonoBehaviour
             ps3.emissionRate = 0f;
         }
 
+        if (rb.velocity.y < 1f)
+        {
+            airCol.SetActive(true);
+        }
+        else
+        {
+            airCol.SetActive(false);
+        }
 
 
         // SPRITES
@@ -448,11 +459,11 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                rb.gravityScale = 2.2f;
+                rb.gravityScale = 1f;
             }
 
-
             triggerGrounded = true;
+
         }
     }
 

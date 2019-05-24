@@ -88,25 +88,25 @@ public class AnimationSetup : MonoBehaviour
         {
             AnimSwitch(3);
         }
-        else if (!controllerScript.grounded && rb.velocity.y <= 0f)
+        else if (Input.GetAxisRaw("Horizontal") != 0f && controllerScript.triggerGrounded)
+        {
+            AnimSwitch(6);
+        }
+        else if (controllerScript.triggerGrounded && controllerScript.rb.velocity.magnitude > 1.2f && Input.GetAxisRaw("Horizontal") == 0f)
+        {
+            AnimSwitch(5);
+        }
+        else if (!controllerScript.grounded && !controllerScript.triggerGrounded && rb.velocity.y <= 0f)
         {
             AnimSwitch(9);
         }
-        else if (!controllerScript.grounded && rb.velocity.y > 0f)
+        else if (!controllerScript.grounded && !controllerScript.triggerGrounded && rb.velocity.y > 0f)
         {
             AnimSwitch(1);
         }
         else if (controllerScript.grounded && controllerScript.hasJumped)
         {
             AnimSwitch(7);
-        }
-        else if (Input.GetAxisRaw("Horizontal") != 0f && controllerScript.triggerGrounded)
-        {
-            AnimSwitch(6);
-        }
-        else if (controllerScript.rb.velocity.magnitude > 1.2f && Input.GetAxisRaw("Horizontal") == 0f)
-        {
-            AnimSwitch(5);
         }
         else if (controllerScript.rb.velocity.magnitude <= 1.2f && Input.GetAxisRaw("Horizontal") == 0f)
         {
