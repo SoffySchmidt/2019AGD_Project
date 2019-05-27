@@ -1,0 +1,539 @@
+fileFormatVersion: 2
+guid: 2f79d44623e08ed4da16d9b484ff000f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3153424723861944302
+    second: Fern_spritesheet_0
+  - first:
+      213: 3798516707353425233
+    second: Fern_spritesheet_1
+  - first:
+      213: 2836322149687028294
+    second: Fern_spritesheet_2
+  - first:
+      213: -1277457795041644122
+    second: Fern_spritesheet_3
+  - first:
+      213: 6172426132599049554
+    second: Fern_spritesheet_4
+  - first:
+      213: 3767755594751309427
+    second: Fern_spritesheet_5
+  - first:
+      213: 2681980916562517438
+    second: Fern_spritesheet_6
+  - first:
+      213: 837405413383025551
+    second: Fern_spritesheet_7
+  - first:
+      213: -6241500175810971527
+    second: Fern_spritesheet_8
+  - first:
+      213: -913409676410653965
+    second: Fern_spritesheet_9
+  - first:
+      213: -3255584908778297731
+    second: Fern_spritesheet_10
+  - first:
+      213: 1227937045542222237
+    second: Fern_spritesheet_11
+  - first:
+      213: 8673962703225192031
+    second: Fern_spritesheet_12
+  - first:
+      213: -4012327136776706976
+    second: Fern_spritesheet_13
+  - first:
+      213: 7655353883055525787
+    second: Fern_spritesheet_14
+  - first:
+      213: -7371098089086185470
+    second: Fern_spritesheet_15
+  - first:
+      213: -8929318481066509553
+    second: Fern_spritesheet_16
+  - first:
+      213: -6149026680159884827
+    second: Fern_spritesheet_21
+  - first:
+      213: -5026301817482191943
+    second: Fern_spritesheet_22
+  - first:
+      213: -5435150171982928758
+    second: Fern_spritesheet_23
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fern_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 2261
+        width: 425
+        height: 466
+      alignment: 9
+      pivot: {x: 0.28679082, y: 0.07574541}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 621fda17efdad82479dbddf317e145de
+      internalID: -3153424723861944302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 2261
+        width: 493
+        height: 461
+      alignment: 9
+      pivot: {x: 0.25493196, y: 0.07710025}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf03b63499965e4db216cd3df155aeb
+      internalID: 3798516707353425233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 2259
+        width: 477
+        height: 450
+      alignment: 9
+      pivot: {x: 0.056745294, y: 0.09727268}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3097cc4105c3b604789aaf17b7f52e29
+      internalID: 2836322149687028294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 2271
+        width: 475
+        height: 436
+      alignment: 9
+      pivot: {x: 0.06644069, y: 0.07174431}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9bb7727b8523414eae61f7d1c76cce5
+      internalID: -1277457795041644122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 2271
+        width: 510
+        height: 428
+      alignment: 9
+      pivot: {x: 0.06389017, y: 0.082986705}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f2b7a7cf5519b649a562d4d04946a3d
+      internalID: 6172426132599049554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 2218
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 462e1f2e75836294d899365d065d7115
+      internalID: 3767755594751309427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 2183
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5005f0a9a9806849b79a0bb1271cb26
+      internalID: 2681980916562517438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 2164
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed629daa0d499594d8df68b7865ba2e4
+      internalID: 837405413383025551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 1695
+        width: 537
+        height: 425
+      alignment: 9
+      pivot: {x: 0.06536411, y: 0.11234719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 804cf482537721a468b6576e537253aa
+      internalID: -6241500175810971527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 1706
+        width: 631
+        height: 401
+      alignment: 9
+      pivot: {x: 0.060485743, y: 0.068372466}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ba0f3aa64855d4aaf56359df36ed3c
+      internalID: -913409676410653965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 1695
+        width: 679
+        height: 412
+      alignment: 9
+      pivot: {x: 0.06324824, y: 0.10678041}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb3ef46cef2b6b46b5f565ee6afb535
+      internalID: -3255584908778297731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 1136
+        width: 757
+        height: 407
+      alignment: 9
+      pivot: {x: 0.04295858, y: 0.12218938}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67b7e1889b7a55e4295b9bd6e3fa09cd
+      internalID: 1227937045542222237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 1129
+        width: 841
+        height: 412
+      alignment: 9
+      pivot: {x: 0.049428243, y: 0.16009818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6691baa0f9fa03040ab0e37b31145333
+      internalID: 8673962703225192031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 1850
+        y: 1137
+        width: 942
+        height: 434
+      alignment: 9
+      pivot: {x: 0.05955269, y: 0.18603769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5bd9356302e9f4694d6ed948026b68
+      internalID: -4012327136776706976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 591
+        width: 1072
+        height: 449
+      alignment: 9
+      pivot: {x: 0.059239645, y: 0.2057052}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce8b642dc12bbb498ebeaf0c0ff6b19
+      internalID: 7655353883055525787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 582
+        width: 1245
+        height: 422
+      alignment: 9
+      pivot: {x: 0.04430966, y: 0.23784287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc290db71da01e4db2905201f2ce2c0
+      internalID: -7371098089086185470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 142
+        width: 1276
+        height: 242
+      alignment: 9
+      pivot: {x: 0.028703343, y: 0.36544195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a52ca99deb5df454683cd951db898864
+      internalID: -6149026680159884827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fern_spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 107
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e4cc837dee7ba9469fd87517596c398
+      internalID: -5435150171982928758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 452f54720edf33843bc3e89c80056f2e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
