@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public float impactRead;
     public PhysicsMaterial2D matSlip;
     public PhysicsMaterial2D matNonSlip;
+    public PhysicsMaterial2D matSuperNonSlip;
     public Rigidbody2D rb;
     public float oriSpeed;
     public float speedMul;
@@ -264,7 +265,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.AddForce(-rb.velocity);
+            rb.AddForce(-rb.velocity * rb.velocity.magnitude);
 
             momMulti = 0.5f;
         }
@@ -420,9 +421,16 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                GetComponent<Collider2D>().sharedMaterial = matNonSlip;
-            }
+                if (Input.GetAxisRaw("Horizontal") != 0)
+                {
+                    GetComponent<Collider2D>().sharedMaterial = matNonSlip;
+                }
+                else
+                {
+                    GetComponent<Collider2D>().sharedMaterial = matSuperNonSlip;
+                }
 
+            }
 
 
             grounded = true;
