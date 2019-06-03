@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Mixed Work/Scenes/Mark/TheGrove_VerticalSlice.unity
     guid: 0ab2bad31beba4a6494f94e51a9b943c
+  - enabled: 1
+    path: Assets/Mixed Work/Scenes/Laura/MainMenu.unity
+    guid: 65810c3019787c948bf67d7ff931ced6
   m_configObjects: {}
