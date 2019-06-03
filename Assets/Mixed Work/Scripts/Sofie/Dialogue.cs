@@ -7,7 +7,7 @@ public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
-    private int index;
+    public int index;
     public float typingSpeed;
 
     public Animator textDisplayAnim;
