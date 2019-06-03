@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 44cd392878a873b49bcef3050044bd92
+guid: 30efdb9a16608914ba1c4a46268d9981
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4261107073201970743
-    second: elderspirit1anim_0
+      213: -7864376697303992115
+    second: elderspirit1anim 1_0
   - first:
-      213: -2704778559432773525
-    second: elderspirit1anim_1
+      213: 8180197543494589314
+    second: elderspirit1anim 1_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -90,7 +90,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: elderspirit1anim_0
+      name: elderspirit1anim 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -104,14 +104,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cf128e8379565e4aa202450b143e1fd
-      internalID: 4261107073201970743
+      spriteID: 5dd76fa809127f7428a457d1a59e5e27
+      internalID: -7864376697303992115
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elderspirit1anim_1
+      name: elderspirit1anim 1_1
       rect:
         serializedVersion: 2
         x: 3292
@@ -125,8 +125,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02aacc9f20fff9747b901acbc5f9a6e4
-      internalID: -2704778559432773525
+      spriteID: 03b65e0544dff7d4babbefb9ba1af43f
+      internalID: 8180197543494589314
       vertices: []
       indices: 
       edges: []
@@ -134,7 +134,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: bc108f15fea5bd0459aadd5c54a61a9b
+    spriteID: 9a75d018185901642ad15a023d6ed376
     internalID: 0
     vertices: []
     indices: 
