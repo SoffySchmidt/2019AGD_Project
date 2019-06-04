@@ -42,8 +42,12 @@ public class TriggerDialogue : MonoBehaviour
             DialogueText.SetActive(false);
             ContinueKey.SetActive(false);
             DialogueManager.GetComponent<Dialogue>().enabled = false;
+            gameObject.GetComponent<CircleCollider2D>().radius = 1;
             gameObject.GetComponent<CircleCollider2D>().isTrigger = false;
-
+        }
+        else
+        {
+            
         }
     }
 
