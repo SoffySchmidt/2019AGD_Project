@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TriggerDialogue : MonoBehaviour
 {
-    public GameObject Dialogue;
+    public GameObject DialogueManager;
     public GameObject DialogueText;
     public GameObject ContinueKey;
     public Animator SpiritAnim;
@@ -13,31 +13,31 @@ public class TriggerDialogue : MonoBehaviour
 
     private void Update()
     {
-        if (Dialogue.GetComponent<Dialogue>().index == 0)
+        if (DialogueManager.GetComponent<Dialogue>().index == 0)
         {
             SpiritAnim.Play("WaterSpirit_Idle");
         }
 
-        if (Dialogue.GetComponent<Dialogue>().index == 1)
+        if (DialogueManager.GetComponent<Dialogue>().index == 1)
         {
             SpiritAnim.Play("WaterSpirit_Panic");
         }
 
-        if (Dialogue.GetComponent<Dialogue>().index == 2)
+        if (DialogueManager.GetComponent<Dialogue>().index == 2)
         {
             SpiritAnim.Play("WaterSpirit_Fly");
         }
 
-        if (Dialogue.GetComponent<Dialogue>().index == 3)
+        if (DialogueManager.GetComponent<Dialogue>().index == 3)
         {
             SpiritAnim.Play("WaterSpirit_FlyIdle");
         }
-        if (Dialogue.GetComponent<Dialogue>().index == 4)
+        if (DialogueManager.GetComponent<Dialogue>().index == 4)
         {
             SpiritAnim.Play("WaterSpirit_FlyOff");
             DialogueText.SetActive(false);
             ContinueKey.SetActive(false);
-            Dialogue.GetComponent<Dialogue>().enabled = false;
+            DialogueManager.GetComponent<Dialogue>().enabled = false;
         }
     }
 
@@ -47,7 +47,7 @@ public class TriggerDialogue : MonoBehaviour
         {
             DialogueText.SetActive(true);
             ContinueKey.SetActive(true);
-            Dialogue.GetComponent<Dialogue>().enabled = true;
+            DialogueManager.GetComponent<Dialogue>().enabled = true;
 
         }
         
@@ -57,7 +57,7 @@ public class TriggerDialogue : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            Dialogue.GetComponent<Dialogue>().enabled = false;
+            DialogueManager.GetComponent<Dialogue>().enabled = false;
             DialogueText.SetActive(false);
             ContinueKey.SetActive(false);
         }

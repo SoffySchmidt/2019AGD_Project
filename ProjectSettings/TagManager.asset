@@ -10,6 +10,7 @@ TagManager:
   - outsideBorder
   - grass
   - cannon
+  - spirit
   layers:
   - Default
   - TransparentFX
