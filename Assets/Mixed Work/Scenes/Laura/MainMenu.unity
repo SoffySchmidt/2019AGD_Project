@@ -1369,6 +1369,11 @@ PrefabInstance:
       propertyPath: InitialModule.gravityModifier.scalar
       value: -0.001
       objectReference: {fileID: 0}
+    - target: {fileID: 5667335826643510863, guid: 674e3aaf0fcac5240b70fdf30e762d87,
+        type: 3}
+      propertyPath: ExternalForcesModule.multiplierCurve.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 674e3aaf0fcac5240b70fdf30e762d87, type: 3}
 --- !u!4 &208600166 stripped
@@ -1471,7 +1476,7 @@ PrefabInstance:
     - target: {fileID: 254148855675732503, guid: c2afe475c76fa454b8396ae33d4de9a3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 254148855675732523, guid: c2afe475c76fa454b8396ae33d4de9a3,
         type: 3}
@@ -1684,6 +1689,14 @@ PrefabInstance:
     - target: {fileID: 269091904, guid: c2afe475c76fa454b8396ae33d4de9a3, type: 3}
       propertyPath: ExternalForcesModule.influenceMask.m_Bits
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 269091904, guid: c2afe475c76fa454b8396ae33d4de9a3, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 269091904, guid: c2afe475c76fa454b8396ae33d4de9a3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 487677425, guid: c2afe475c76fa454b8396ae33d4de9a3, type: 3}
       propertyPath: ExternalForcesModule.enabled
@@ -4907,7 +4920,7 @@ ParticleSystem:
     randomizePerFrame: 0
   ExternalForcesModule:
     serializedVersion: 2
-    enabled: 1
+    enabled: 0
     multiplierCurve:
       serializedVersion: 2
       minMaxState: 0
@@ -10628,6 +10641,11 @@ PrefabInstance:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5667335826643510863, guid: 674e3aaf0fcac5240b70fdf30e762d87,
+        type: 3}
+      propertyPath: ExternalForcesModule.multiplierCurve.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 674e3aaf0fcac5240b70fdf30e762d87, type: 3}
 --- !u!4 &1194718413 stripped
@@ -11178,6 +11196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5667335826643510863, guid: 674e3aaf0fcac5240b70fdf30e762d87,
+        type: 3}
+      propertyPath: ExternalForcesModule.multiplierCurve.scalar
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 674e3aaf0fcac5240b70fdf30e762d87, type: 3}
@@ -14697,7 +14720,7 @@ ParticleSystem:
     randomizePerFrame: 0
   ExternalForcesModule:
     serializedVersion: 2
-    enabled: 1
+    enabled: 0
     multiplierCurve:
       serializedVersion: 2
       minMaxState: 0
