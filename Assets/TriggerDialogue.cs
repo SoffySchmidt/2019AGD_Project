@@ -35,9 +35,15 @@ public class TriggerDialogue : MonoBehaviour
         if (DialogueManager.GetComponent<Dialogue>().index == 4)
         {
             SpiritAnim.Play("WaterSpirit_FlyOff");
+        }
+        if (DialogueManager.GetComponent<Dialogue>().index == 5)
+        {
+            SpiritAnim.Play("WaterSpirit_FlyOff2");
             DialogueText.SetActive(false);
             ContinueKey.SetActive(false);
             DialogueManager.GetComponent<Dialogue>().enabled = false;
+            gameObject.GetComponent<CircleCollider2D>().isTrigger = false;
+
         }
     }
 
@@ -45,9 +51,11 @@ public class TriggerDialogue : MonoBehaviour
     {
         if (col.tag == "Player")
         {
+            gameObject.GetComponent<CircleCollider2D>().radius = 15;
+            DialogueManager.GetComponent<Dialogue>().enabled = true;
             DialogueText.SetActive(true);
             ContinueKey.SetActive(true);
-            DialogueManager.GetComponent<Dialogue>().enabled = true;
+            
 
         }
         
@@ -57,6 +65,7 @@ public class TriggerDialogue : MonoBehaviour
     {
         if (col.tag == "Player")
         {
+            gameObject.GetComponent<CircleCollider2D>().radius = 9;
             DialogueManager.GetComponent<Dialogue>().enabled = false;
             DialogueText.SetActive(false);
             ContinueKey.SetActive(false);
