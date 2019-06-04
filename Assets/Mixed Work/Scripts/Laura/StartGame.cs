@@ -9,12 +9,21 @@ public class StartGame : MonoBehaviour {
     Image fade;
     public float fadeSpeed = 20;
     public bool allowLoad;
+    bool startedLoad = true;
 
     private void Start()
     {
         fade = GameObject.Find("Fade").GetComponent<Image>();
         StartCoroutine(Fade(true));
-        StartCoroutine(LoadInBackground());
+    }
+
+    private void Update()
+    {
+        if (!startedLoad)
+        {
+            StartCoroutine(LoadInBackground());
+            startedLoad = true;
+        }
     }
 
     public void LoadByName (string sceneName)
@@ -28,6 +37,7 @@ public class StartGame : MonoBehaviour {
         asyncOperation.allowSceneActivation = false;
         while (!asyncOperation.isDone)
         {
+            Debug.Log(asyncOperation.progress.ToString());
             if (asyncOperation.progress >= 0.9f)
             {
                 if (allowLoad)
@@ -49,7 +59,7 @@ public class StartGame : MonoBehaviour {
                 yield return new WaitForSeconds(1/fadeSpeed);
             }
             fade.color = new Color(fade.color.r, fade.color.b, fade.color.g, 0);
-
+            startedLoad = false;
         }
         else
         {
