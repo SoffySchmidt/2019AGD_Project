@@ -234,18 +234,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &68653552 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 231442178, guid: 927256a585616314e98c7baab0f55b0a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2015158294}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &68653555 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7889445614404489527, guid: 927256a585616314e98c7baab0f55b0a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2015158294}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &125436452 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8733846106533703306, guid: 7f5d5419db72d9844a302ce811a1d582,
@@ -2818,70 +2806,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1138709734}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1195038348
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1195038350}
-  - component: {fileID: 1195038349}
-  - component: {fileID: 1195038351}
-  m_Layer: 0
-  m_Name: WaterSpirit
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!58 &1195038349
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195038348}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.36958218, y: 7506788}
-  serializedVersion: 2
-  m_Radius: 5.0640216
---- !u!4 &1195038350
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195038348}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 11.85, y: -4.04, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 68653555}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1195038351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195038348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 962af17c833e96e4494cd456faf57cd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dialogue: {fileID: 1176419141}
-  DialogueText: {fileID: 1700708958}
-  SpiritAnim: {fileID: 68653552}
 --- !u!1 &1213753625
 GameObject:
   m_ObjectHideFlags: 0
@@ -7083,90 +7007,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &2015158294
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1195038350}
-    m_Modifications:
-    - target: {fileID: 2439182932575675896, guid: 927256a585616314e98c7baab0f55b0a,
-        type: 3}
-      propertyPath: m_Name
-      value: WaterSpirit
-      objectReference: {fileID: 0}
-    - target: {fileID: 7889445614404489527, guid: 927256a585616314e98c7baab0f55b0a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 15.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 7889445614404489527, guid: 927256a585616314e98c7baab0f55b0a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 7889445614404489527, guid: 927256a585616314e98c7baab0f55b0a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 7889445614404489527, guid: 927256a585616314e98c7baab0f55b0a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 7889445614404489527, guid: 927256a585616314e98c7baab0f55b0a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7889445614404489527, guid: 927256a585616314e98c7baab0f55b0a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7889445614404489527, guid: 927256a585616314e98c7baab0f55b0a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 7889445614404489527, guid: 927256a585616314e98c7baab0f55b0a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7889445614404489527, guid: 927256a585616314e98c7baab0f55b0a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7889445614404489527, guid: 927256a585616314e98c7baab0f55b0a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7889445614404489527, guid: 927256a585616314e98c7baab0f55b0a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7889445614404489527, guid: 927256a585616314e98c7baab0f55b0a,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.50000095
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791983911621702900, guid: 927256a585616314e98c7baab0f55b0a,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 112766543
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791983911621702900, guid: 927256a585616314e98c7baab0f55b0a,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 927256a585616314e98c7baab0f55b0a, type: 3}
 --- !u!1 &2022197565
 GameObject:
   m_ObjectHideFlags: 0
@@ -8089,3 +7929,87 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &8544135379066099710
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8544135377910219122, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: m_Name
+      value: WaterSpirit_Guide
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544135377910219120, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544135377910219120, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544135377910219120, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544135377910219120, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544135377910219120, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544135377910219120, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544135377910219120, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544135377910219120, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544135377910219120, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544135377910219120, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544135377910219120, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544135377910219121, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: Dialogue
+      value: 
+      objectReference: {fileID: 1176419141}
+    - target: {fileID: 8544135377910219121, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: DialogueText
+      value: 
+      objectReference: {fileID: 1700708958}
+    - target: {fileID: 8544135377910219121, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: ContinueKey
+      value: 
+      objectReference: {fileID: 1799588757}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 177b8a3e22c30f4428543bfed2acb5b7, type: 3}
