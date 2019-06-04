@@ -37,7 +37,6 @@ public class StartGame : MonoBehaviour {
         asyncOperation.allowSceneActivation = false;
         while (!asyncOperation.isDone)
         {
-            Debug.Log(asyncOperation.progress.ToString());
             if (asyncOperation.progress >= 0.9f)
             {
                 if (allowLoad)
