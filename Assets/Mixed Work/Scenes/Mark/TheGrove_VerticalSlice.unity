@@ -3141,7 +3141,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 4df056223dbf0164ea9804fb346d1ca9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -4365,7 +4365,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 4df056223dbf0164ea9804fb346d1ca9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -6950,7 +6950,7 @@ Transform:
   - {fileID: 210756245}
   - {fileID: 1088936184}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: -180, y: -180, z: 352.97}
 --- !u!212 &533300380
 SpriteRenderer:
@@ -7013,7 +7013,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 4df056223dbf0164ea9804fb346d1ca9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -13158,12 +13158,12 @@ PrefabInstance:
     - target: {fileID: 254148855675732523, guid: c2afe475c76fa454b8396ae33d4de9a3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 303.4
+      value: -12.9
       objectReference: {fileID: 0}
     - target: {fileID: 254148855675732523, guid: c2afe475c76fa454b8396ae33d4de9a3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.1
+      value: -16.5
       objectReference: {fileID: 0}
     - target: {fileID: 254148855675732523, guid: c2afe475c76fa454b8396ae33d4de9a3,
         type: 3}
@@ -20238,7 +20238,7 @@ PrefabInstance:
     - target: {fileID: 5667335826643510860, guid: b77c9901d10f9f441a1baf3b3e676919,
         type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5667335826643510860, guid: b77c9901d10f9f441a1baf3b3e676919,
         type: 3}
@@ -22884,7 +22884,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 4df056223dbf0164ea9804fb346d1ca9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -23851,7 +23851,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 4df056223dbf0164ea9804fb346d1ca9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -26754,7 +26754,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 4df056223dbf0164ea9804fb346d1ca9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -27631,6 +27631,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.Array.data[25].y
       value: 0.47269484
+      objectReference: {fileID: 0}
+    - target: {fileID: 726834424577441608, guid: 9eb86f8c4b5238c4a82d514a509518aa,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 4.078125
+      objectReference: {fileID: 0}
+    - target: {fileID: 726834424577441608, guid: 9eb86f8c4b5238c4a82d514a509518aa,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 726834424577441608, guid: 9eb86f8c4b5238c4a82d514a509518aa,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eb86f8c4b5238c4a82d514a509518aa, type: 3}
