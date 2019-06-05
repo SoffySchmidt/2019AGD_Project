@@ -39,7 +39,7 @@ public class TriggerDialogue : MonoBehaviour
         if (DialogueManager.GetComponent<Dialogue>().index == 6)
         {
             SpiritAnim.Play("WaterSpirit_FlyOff2");
-            DialogueText.SetActive(false);
+            //DialogueText.SetActive(false);
             ContinueKey.SetActive(false);
             DialogueManager.GetComponent<Dialogue>().enabled = false;
             gameObject.GetComponent<CircleCollider2D>().radius = 1;
@@ -67,7 +67,7 @@ public class TriggerDialogue : MonoBehaviour
         {
             gameObject.GetComponent<CircleCollider2D>().radius = 9;
             DialogueManager.GetComponent<Dialogue>().enabled = false;
-            DialogueText.SetActive(false);
+            //DialogueText.SetActive(false);
             ContinueKey.SetActive(false);
         }
     }
