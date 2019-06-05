@@ -33,7 +33,7 @@ public class StartGame : MonoBehaviour {
 
     IEnumerator LoadInBackground()
     {
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(0);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(1);
         asyncOperation.allowSceneActivation = false;
         while (!asyncOperation.isDone)
         {
