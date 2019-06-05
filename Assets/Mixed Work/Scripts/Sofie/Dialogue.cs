@@ -23,7 +23,8 @@ public class Dialogue : MonoBehaviour
     {
         if (textDisplay.text == sentences[index])
         {
-         continueKey.SetActive(true);
+            textDisplayAnim.SetBool("Change", false);
+            continueKey.SetActive(true);
 
          if(continueKey && Input.GetKeyDown(KeyCode.E))
             NextSentence();
@@ -42,7 +43,7 @@ public class Dialogue : MonoBehaviour
     public void NextSentence()
     {
 
-            textDisplayAnim.SetTrigger("Change");
+            textDisplayAnim.SetBool("Change", true);
             continueKey.SetActive(false);
 
             if (index < sentences.Length - 1)
@@ -58,7 +59,5 @@ public class Dialogue : MonoBehaviour
             continueKey.SetActive(false);
         }
     }
-
-
 
 }
