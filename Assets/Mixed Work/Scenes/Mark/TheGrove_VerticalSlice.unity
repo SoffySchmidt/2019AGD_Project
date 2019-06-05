@@ -17743,10 +17743,20 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3248701812048518123, guid: b79eb687c77065d4d83c5a8180477854,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -329
+      objectReference: {fileID: 0}
     - target: {fileID: 3248701810584731289, guid: b79eb687c77065d4d83c5a8180477854,
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 789
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248701810584731289, guid: b79eb687c77065d4d83c5a8180477854,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -424
       objectReference: {fileID: 0}
     - target: {fileID: 3248701810584731302, guid: b79eb687c77065d4d83c5a8180477854,
         type: 3}
