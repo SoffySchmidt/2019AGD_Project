@@ -45,10 +45,6 @@ public class TriggerDialogue : MonoBehaviour
             gameObject.GetComponent<CircleCollider2D>().radius = 1;
             gameObject.GetComponent<CircleCollider2D>().isTrigger = false;
         }
-        else
-        {
-            
-        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
