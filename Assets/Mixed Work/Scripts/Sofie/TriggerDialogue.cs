@@ -36,7 +36,7 @@ public class TriggerDialogue : MonoBehaviour
         {
             SpiritAnim.Play("WaterSpirit_FlyOff");
         }
-        if (DialogueManager.GetComponent<Dialogue>().index == 5)
+        if (DialogueManager.GetComponent<Dialogue>().index == 6)
         {
             SpiritAnim.Play("WaterSpirit_FlyOff2");
             DialogueText.SetActive(false);
