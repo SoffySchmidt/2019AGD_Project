@@ -26,7 +26,7 @@ public class Dialogue : MonoBehaviour
             textDisplayAnim.SetBool("Change", false);
             continueKey.SetActive(true);
 
-         if(continueKey && Input.GetKeyDown(KeyCode.E))
+         if(continueKey && Input.GetButton("Text"))
             NextSentence();
         }
     }
