@@ -6602,6 +6602,11 @@ PrefabInstance:
       propertyPath: ContinueKey
       value: 
       objectReference: {fileID: 534215594}
+    - target: {fileID: 7192092635169328864, guid: 177b8a3e22c30f4428543bfed2acb5b7,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.9019608
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 177b8a3e22c30f4428543bfed2acb5b7, type: 3}
 --- !u!1 &514957464
@@ -13153,12 +13158,12 @@ PrefabInstance:
     - target: {fileID: 254148855675732523, guid: c2afe475c76fa454b8396ae33d4de9a3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.7
+      value: 14.8
       objectReference: {fileID: 0}
     - target: {fileID: 254148855675732523, guid: c2afe475c76fa454b8396ae33d4de9a3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.1
+      value: -6.4
       objectReference: {fileID: 0}
     - target: {fileID: 254148855675732523, guid: c2afe475c76fa454b8396ae33d4de9a3,
         type: 3}
