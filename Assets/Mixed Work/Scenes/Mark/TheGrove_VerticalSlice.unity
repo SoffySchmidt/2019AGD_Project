@@ -17743,6 +17743,68 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3248701810584731289, guid: b79eb687c77065d4d83c5a8180477854,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 789
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248701810584731302, guid: b79eb687c77065d4d83c5a8180477854,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248701811287719513, guid: b79eb687c77065d4d83c5a8180477854,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b0fec9adc4fbe54bb4219b55ce01cdc,
+        type: 2}
+    - target: {fileID: 3248701811287719513, guid: b79eb687c77065d4d83c5a8180477854,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248701811287719513, guid: b79eb687c77065d4d83c5a8180477854,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248701811287719513, guid: b79eb687c77065d4d83c5a8180477854,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248701811287719513, guid: b79eb687c77065d4d83c5a8180477854,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 925400243946352374, guid: 7b0fec9adc4fbe54bb4219b55ce01cdc,
+        type: 2}
+    - target: {fileID: 3248701811287719513, guid: b79eb687c77065d4d83c5a8180477854,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248701811287719513, guid: b79eb687c77065d4d83c5a8180477854,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -53.17871
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248701811287719513, guid: b79eb687c77065d4d83c5a8180477854,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248701811287719513, guid: b79eb687c77065d4d83c5a8180477854,
+        type: 3}
+      propertyPath: m_margin.y
+      value: 17.17011
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248701811287719513, guid: b79eb687c77065d4d83c5a8180477854,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -0.9538881
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b79eb687c77065d4d83c5a8180477854, type: 3}
 --- !u!4 &1394229482 stripped
