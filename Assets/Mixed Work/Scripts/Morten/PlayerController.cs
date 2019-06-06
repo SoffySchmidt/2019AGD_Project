@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -235,7 +236,15 @@ public class PlayerController : MonoBehaviour
             sprite.transform.localScale = new Vector3(-1, 1, 1);
         }
 
+        if (Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene(0);
+        }
 
+        if (Input.GetKeyDown("escape"))
+        {
+            Application.Quit();
+        }
 
         if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") > 0 && rb.velocity.y > 0.5f)
         {
