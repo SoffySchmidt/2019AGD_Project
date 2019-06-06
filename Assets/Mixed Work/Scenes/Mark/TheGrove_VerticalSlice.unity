@@ -18052,6 +18052,11 @@ PrefabInstance:
       propertyPath: m_margin.w
       value: -0.9538881
       objectReference: {fileID: 0}
+    - target: {fileID: 3248701811287719513, guid: b79eb687c77065d4d83c5a8180477854,
+        type: 3}
+      propertyPath: m_text
+      value: Press 'B'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b79eb687c77065d4d83c5a8180477854, type: 3}
 --- !u!4 &1394229482 stripped
